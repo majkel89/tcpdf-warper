@@ -12,7 +12,7 @@ TCPDF Warper
 Installation
 ------------
 
-     composer require --dev org.majkel/tcpdfwarper
+     composer require org.majkel/tcpdfwarper
 
 About
 -----
