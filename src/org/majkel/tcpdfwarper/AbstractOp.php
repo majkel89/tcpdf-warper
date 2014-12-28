@@ -8,6 +8,10 @@
 
 namespace org\majkel\tcpdfwarper;
 
+/**
+ * Class AbstractOp
+ * @package org\majkel\tcpdfwarper
+ */
 abstract class AbstractOp {
 
 	/**

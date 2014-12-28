@@ -5,6 +5,8 @@ TCPDF Warper
 
 **Version**: 0.1.0-alpha
 
+**Minimum PHP**: 5.4
+
 Installation
 ------------
 

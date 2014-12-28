@@ -8,33 +8,13 @@
 
 namespace org\majkel\tcpdfwarper;
 
+/**
+ * Class TCPDFWarper
+ * @package org\majkel\tcpdfwarper
+ * @codeCoverageIgnore
+ */
 class TCPDFWarper extends \TCPDF {
 
-	/**
-	 * @return MultiCellOp
-	 */
-	public function buildMulticell() {
-		return new MultiCellOp($this);
-	}
+	use TCPDFWarperTrait;
 
-	/**
-	 * @return CellOp
-	 */
-	public function buildCell() {
-		return new CellOp($this);
-	}
-
-	/**
-	 * @return TextOp
-	 */
-	public function buildText() {
-		return new TextOp($this);
-	}
-
-	/**
-	 * @return ImageOp
-	 */
-	public function buildImage() {
-		return new ImageOp($this);
-	}
 }
