@@ -3,7 +3,7 @@
     "description": "TCPDF warper. Shortcuts library calls.",
     "license": "Freeware",
     "type": "library",
-    "keywords": ["tcpdf","wartper","pdf"],
+    "keywords": ["tcpdf","warper","pdf"],
     "authors": [
         {
             "name": "Michal Kowalik",
