@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-0": {
-            "\\org\\majkel\\tcpdf-warper": "src"
+            "org\\majkel\\tcpdfwarper": "src/"
         }
     }
 }

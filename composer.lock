@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f36942c2cce8fe38987ed38191aae0eb",
+    "hash": "163b3fceb0257c4527cf50ea4b34ae57",
     "packages": [],
     "packages-dev": [
         {
@@ -833,16 +833,16 @@
         },
         {
             "name": "tecnick.com/tcpdf",
-            "version": "6.2.0",
+            "version": "6.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tecnickcom/TCPDF.git",
-                "reference": "40662daa766bd3a6b5eafa44dfde680ee6661716"
+                "reference": "d7071cbf26ac735f3883afaf895aba4fe394140b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/40662daa766bd3a6b5eafa44dfde680ee6661716",
-                "reference": "40662daa766bd3a6b5eafa44dfde680ee6661716",
+                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/d7071cbf26ac735f3883afaf895aba4fe394140b",
+                "reference": "d7071cbf26ac735f3883afaf895aba4fe394140b",
                 "shasum": ""
             },
             "require": {
@@ -892,7 +892,7 @@
                 "pdf417",
                 "qrcode"
             ],
-            "time": "2014-12-10 18:53:49"
+            "time": "2014-12-18 13:36:04"
         }
     ],
     "aliases": [],
@@ -900,6 +900,8 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=5.3.0"
+    },
     "platform-dev": []
 }
