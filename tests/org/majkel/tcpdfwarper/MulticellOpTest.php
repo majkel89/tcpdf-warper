@@ -15,7 +15,7 @@ require_once 'OpTestAbstract.php';
  * @package org\majkel\tcpdfwarper
  * @coversDefaultClass \org\majkel\tcpdfwarper\MulticellOp
  */
-class MulticellOpTest extends OpTestAbstract {
+class MultiCellOpTest extends OpTestAbstract {
 
 	/**
 	 * @expectedException \Exception
@@ -79,7 +79,7 @@ class MulticellOpTest extends OpTestAbstract {
 	 * @return string
 	 */
 	protected function getClass() {
-		return '\org\majkel\tcpdfwarper\MulticellOp';
+		return '\org\majkel\tcpdfwarper\MultiCellOp';
 	}
 
 	/**
