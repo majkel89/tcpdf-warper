@@ -8,16 +8,14 @@
 
 namespace org\majkel\tcpdfwarper;
 
-use Xpmock\TestCaseTrait;
+require_once 'AbstractTestCase.php';
 
 /**
  * Class AbstractOpTest
  * @package org\majkel\tcpdfwarper
  * @coversDefaultClass \org\majkel\tcpdfwarper\AbstractOp
  */
-class AbstractOpTest extends \PHPUnit_Framework_TestCase {
-
-	use TestCaseTrait;
+class AbstractOpTest extends AbstractTestCase {
 
 	const CLS = '\org\majkel\tcpdfwarper\AbstractOp';
 
@@ -45,9 +43,7 @@ class AbstractOpTest extends \PHPUnit_Framework_TestCase {
 	 * @covers ::put
 	 */
 	public function testPut() {
-		$pdf = $this->getMockBuilder('TCPDF')
-				->disableOriginalConstructor()
-				->getMock();
+		$pdf = $this->getTcpdfMock();
 		$pdf->expects($this->any())
 				->method('AddSpotColor')
 				->with(1, 2, 3, 4, 5);

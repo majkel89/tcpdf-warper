@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "163b3fceb0257c4527cf50ea4b34ae57",
+    "hash": "540543d264d72fbb20031c23c827c360",
     "packages": [],
     "packages-dev": [
         {
@@ -60,6 +60,37 @@
                 "instantiate"
             ],
             "time": "2014-10-13 12:58:55"
+        },
+        {
+            "name": "onigoetz/fpdi_tcpdf",
+            "version": "1.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/onigoetz/fpdi_tcpdf.git",
+                "reference": "116ff556aa5032107ff22c0c678028041268680b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/onigoetz/fpdi_tcpdf/zipball/116ff556aa5032107ff22c0c678028041268680b",
+                "reference": "116ff556aa5032107ff22c0c678028041268680b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "tecnick.com/tcpdf": "6.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "fpdi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Unofficial PSR-0 compliant version of the FPDI library for TCPDF",
+            "time": "2014-05-09 18:36:35"
         },
         {
             "name": "phpunit/php-code-coverage",

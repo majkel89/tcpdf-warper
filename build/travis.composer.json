@@ -14,10 +14,8 @@
         "php": ">=5.3.0"
     },
     "require-dev": {
-        "tecnick.com/tcpdf": "~6.2",
         "phpunit/phpunit": "~4.4",
-        "ptrofimov/xpmock": "~1.1",
-        "onigoetz/fpdi_tcpdf": "~1.5"
+        "ptrofimov/xpmock": "~1.1"
     },
     "autoload": {
         "psr-0": {

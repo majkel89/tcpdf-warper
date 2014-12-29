@@ -8,11 +8,9 @@
 
 namespace org\majkel\tcpdfwarper;
 
-use Xpmock\TestCaseTrait;
+require_once 'AbstractTestCase.php';
 
-abstract class OpTestAbstract extends \PHPUnit_Framework_TestCase {
-
-	use TestCaseTrait;
+abstract class OpTestAbstract extends AbstractTestCase {
 
 	/**
 	 * @return string
@@ -44,7 +42,7 @@ abstract class OpTestAbstract extends \PHPUnit_Framework_TestCase {
 	}
 
 	protected function getExceptedArguments() {
-		$class = new \ReflectionClass('TCPDF');
+		$class = new \ReflectionClass($this->getTcpdfClass());
 		$method = $class->getMethod($this->getMethod());
 		$parameters = $method->getParameters();
 
@@ -96,8 +94,7 @@ abstract class OpTestAbstract extends \PHPUnit_Framework_TestCase {
 		$shortClass = $class->getShortName();
 		$invalidArgs = array();
 
-		foreach (array_keys($this->getExceptedArguments()) as $argName) {
-			$arg = $this->processArgName($argName);
+		foreach (array_keys($this->getExceptedArguments()) as $arg) {
 			$Arg = ucfirst($arg);
 
 			$patternProp = "#\s@property\s+\w+\s+\\\$$arg\s#";
@@ -127,9 +124,7 @@ abstract class OpTestAbstract extends \PHPUnit_Framework_TestCase {
 	public function testPut() {
 		$arguments = $this->constructArguments();
 
-		$pdf = $this->getMockBuilder('TCPDF')
-				->disableOriginalConstructor()
-				->getMock();
+		$pdf = $this->getTcpdfMock();
 		$pdf->expects(self::once())
 				->method($this->getMethod())
 				->withConsecutive($arguments);
