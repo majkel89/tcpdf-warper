@@ -1,7 +1,7 @@
 TCPDF Warper
 ============
 
-[![Build Status](https://travis-ci.org/majkel89/tcpdf-warper.svg?branch=v0.1.0)](https://travis-ci.org/majkel89/tcpdf-warper)
+[![Build Status](https://travis-ci.org/majkel89/tcpdf-warper.svg?branch=master)](https://travis-ci.org/majkel89/tcpdf-warper)
 
 **Author**: Michał (majkel) Kowalik <maf.michal@gmail.com>
 
@@ -43,7 +43,6 @@ Following methods are supported
   * Multicell (buildMulticell)
   * Image (buildImage)
   * Text (buildText)
-  
 
 If you are using some kind of fork of TCPDF, you can write your own warper.
 Every statement builder allows you to inject $tcpdf object.
@@ -52,3 +51,11 @@ Every statement builder allows you to inject $tcpdf object.
      $image->setFile($file)
          ->setPos(20, 20)->setSize(64, 64)
          ->render();
+
+Features
+========
+
+  - Fully unit tested
+  - Full code coverage
+  - Tested against multiple php versions (5.6 - 5.4, hhvm)
+  - Tested against multiple TCPDF libraries (see travis)
