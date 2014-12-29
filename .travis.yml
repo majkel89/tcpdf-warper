@@ -6,14 +6,15 @@ php:
     - hhvm
 
 env:
-    - TCPDF_PACKAGE="tecnick.com/tcpdf" TCPDF_VERSION="~6.2"
-    - TCPDF_PACKAGE="tecnick.com/tcpdf" TCPDF_VERSION="~6.1"
+    #- TCPDF_PACKAGE="tecnick.com/tcpdf" TCPDF_VERSION="~6.2"
+    #- TCPDF_PACKAGE="tecnick.com/tcpdf" TCPDF_VERSION="~6.1"
     - TCPDF_PACKAGE="ptrofimov/xpmock"  TCPDF_VERSION="~1.5"
 
-before_script:
-    - rm -rf ./composer.json
-    - cp ./build/travis.composer.json ./composer.json
+install:
+    - rm -rf composer.json
+    - cp build/travis.composer.json composer.json
     - composer install --dev
     - composer require ${TCPDF_PACKAGE}:${TCPDF_VERSION}
+    - composer show -i
 
 script: ./vendor/bin/phpunit --configuration ./build/travis.phpunit.xml
