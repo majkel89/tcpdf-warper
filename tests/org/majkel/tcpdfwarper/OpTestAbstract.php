@@ -31,7 +31,7 @@ abstract class OpTestAbstract extends \PHPUnit_Framework_TestCase {
 	protected function processArgName($name) {
 		return preg_replace_callback('#_([A-Za-z])#', function($matches){
 			return strtoupper($matches[1]);
-		}, $name);
+		}, trim($name, '_'));
 	}
 
 	/**
@@ -108,7 +108,7 @@ abstract class OpTestAbstract extends \PHPUnit_Framework_TestCase {
 		$obj->put();
 	}
 
-	protected function _testSet($method, $p1, $p2) {
+	protected function _testSet2Args($method, $p1, $p2) {
 		$obj = $this->getObject();
 		$obj->$method(1, 2);
 		self::assertSame(1, $obj->$p1);
@@ -116,18 +116,18 @@ abstract class OpTestAbstract extends \PHPUnit_Framework_TestCase {
 	}
 
 	protected function _testSetWH() {
-		$this->_testSet('setWH', 'w', 'h');
+		$this->_testSet2Args('setWH', 'w', 'h');
 	}
 
 	protected function _testSetSize() {
-		$this->_testSet('setSize', 'w', 'h');
+		$this->_testSet2Args('setSize', 'w', 'h');
 	}
 
 	protected function _testSetXY() {
-		$this->_testSet('setXY', 'x', 'y');
+		$this->_testSet2Args('setXY', 'x', 'y');
 	}
 
 	protected function _testSetPos() {
-		$this->_testSet('setPos', 'x', 'y');
+		$this->_testSet2Args('setPos', 'x', 'y');
 	}
 }

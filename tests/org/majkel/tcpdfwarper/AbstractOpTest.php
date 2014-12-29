@@ -97,7 +97,8 @@ class AbstractOpTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @expectedException \Exception
+	 * @expectedException \org\majkel\tcpdfwarper\MissingArgException
+	 * @expectedExceptionMessage Argument `property` is missing
 	 * @covers ::assertArgExists
 	 */
 	public function testAssertArgExistsException() {
@@ -157,7 +158,8 @@ class AbstractOpTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @expectedException \Exception
+	 * @expectedException \org\majkel\tcpdfwarper\MissingMethodException
+	 * @expectedExceptionMessage Call to undefined method `doesNotExists`
 	 * @covers ::__set
 	 * @covers ::__get
 	 * @covers ::__call

@@ -116,7 +116,7 @@ abstract class AbstractOp {
 	 * @param string $name
 	 * @param array $arguments
 	 * @return $this|mixed
-	 * @throws \Exception
+	 * @throws \org\majkel\tcpdfwarper\MissingMethodException
 	 */
 	public function __call($name, $arguments) {
 		$prefix = substr($name, 0, 3);
@@ -129,7 +129,7 @@ abstract class AbstractOp {
 			return $this->$suffix;
 		}
 		else {
-			throw new \Exception();
+			throw new MissingMethodException($name, $arguments);
 		}
 	}
 
@@ -142,11 +142,11 @@ abstract class AbstractOp {
 
 	/**
 	 * @param string $argName
-	 * @throws \Exception
+	 * @throws \org\majkel\tcpdfwarper\MissingArgException
 	 */
 	protected function assertArgExists($argName) {
 		if (!isset($this->_arguments[$argName])) {
-			throw new \Exception();
+			throw new MissingArgException($argName);
 		}
 	}
 }

@@ -18,7 +18,7 @@ require_once 'OpTestAbstract.php';
 class MultiCellOpTest extends OpTestAbstract {
 
 	/**
-	 * @expectedException \Exception
+	 * @expectedException \org\majkel\tcpdfwarper\MissingArgException
 	 * @covers ::put
 	 */
 	public function testPutMissingW() {
@@ -27,7 +27,7 @@ class MultiCellOpTest extends OpTestAbstract {
 	}
 
 	/**
-	 * @expectedException \Exception
+	 * @expectedException \org\majkel\tcpdfwarper\MissingArgException
 	 * @covers ::put
 	 */
 	public function testPutMissingH() {
@@ -37,7 +37,7 @@ class MultiCellOpTest extends OpTestAbstract {
 	}
 
 	/**
-	 * @expectedException \Exception
+	 * @expectedException \org\majkel\tcpdfwarper\MissingArgException
 	 * @covers ::put
 	 */
 	public function testPutMissingTxt() {

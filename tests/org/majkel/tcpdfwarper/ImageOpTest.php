@@ -18,7 +18,7 @@ require_once 'OpTestAbstract.php';
 class ImageOpTest extends OpTestAbstract {
 
 	/**
-	 * @expectedException \Exception
+	 * @expectedException \org\majkel\tcpdfwarper\MissingArgException
 	 * @covers ::put
 	 */
 	public function testPutMissingFile() {

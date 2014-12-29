@@ -17,26 +17,8 @@ require_once 'OpTestAbstract.php';
  */
 class TextOpTest extends OpTestAbstract {
 
-	public function x() {
-		$pdf = new \org\majkel\tcpdfwarper\TCPDFWarper();
-
-		$pdf->Image($file, $x, $y, $w, $h, $type, $link, $align, $resize, $dpi, $palign,
-				$ismaxk, $imgmask, $border, $fitbox, $hdden, $fitonpage, $alt, $altimgs);
-
-		$pdf->buildImage()
-				->setFile($file)
-				->setPos(20, 20)
-				->setSize(64, 64)
-				->render();
-
-		$pdf->buildImage()
-				->setAlt(true)
-				->setAltimgs($altimgs)
-				->render();
-	}
-
 	/**
-	 * @expectedException \Exception
+	 * @expectedException \org\majkel\tcpdfwarper\MissingArgException
 	 * @covers ::put
 	 */
 	public function testPutMissingX() {
@@ -45,7 +27,7 @@ class TextOpTest extends OpTestAbstract {
 	}
 
 	/**
-	 * @expectedException \Exception
+	 * @expectedException \org\majkel\tcpdfwarper\MissingArgException
 	 * @covers ::put
 	 */
 	public function testPutMissingY() {
@@ -55,7 +37,7 @@ class TextOpTest extends OpTestAbstract {
 	}
 
 	/**
-	 * @expectedException \Exception
+	 * @expectedException \org\majkel\tcpdfwarper\MissingArgException
 	 * @covers ::put
 	 */
 	public function testPutMissingTxt() {
