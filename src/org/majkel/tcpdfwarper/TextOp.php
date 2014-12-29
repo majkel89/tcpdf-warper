@@ -12,39 +12,39 @@ namespace org\majkel\tcpdfwarper;
  * Class Cell
  * @package org\majkel\tcpdfwarper
  *
- * @property int $x;
- * @property int $y;
- * @property string $txt;
- * @property int $border;
- * @property int $ln;
- * @property string $align;
- * @property boolean $fill;
- * @property string $link;
- * @property int $stretch;
- * @property boolean $ignoreMinHeight;
- * @property string $calign;
- * @property string $valign;
- * @property boolean $fstroke;
- * @property boolean $fclip;
- * @property boolean $ffill;
- * @property boolean $rtloff;
+ * @property int $x
+ * @property int $y
+ * @property string $txt
+ * @property int $border
+ * @property int $ln
+ * @property string $align
+ * @property boolean $fill
+ * @property string $link
+ * @property int $stretch
+ * @property boolean $ignoreMinHeight
+ * @property string $calign
+ * @property string $valign
+ * @property boolean $fstroke
+ * @property boolean $fclip
+ * @property boolean $ffill
+ * @property boolean $rtloff
  *
- * @method ImageOp setX(int $x)
- * @method ImageOp setY(int $y)
- * @method ImageOp setTxt(string $txt)
- * @method ImageOp setBorder(int $border)
- * @method ImageOp setLn(int $ln)
- * @method ImageOp setAlign(string $align)
- * @method ImageOp setFill(boolean $fill)
- * @method ImageOp setLink(string $link)
- * @method ImageOp setStretch(int $stretch)
- * @method ImageOp setIgnoreMinHeight(boolean $ignoreMinHeight)
- * @method ImageOp setCalign(string $calign)
- * @method ImageOp setValign(string $valign)
- * @method ImageOp setFstroke(boolean $fstroke)
- * @method ImageOp setFclip(boolean $fclip)
- * @method ImageOp setFfill(boolean $ffill)
- * @method ImageOp setRtloff(boolean $rtloff)
+ * @method TextOp setX(int $x)
+ * @method TextOp setY(int $y)
+ * @method TextOp setTxt(string $txt)
+ * @method TextOp setBorder(int $border)
+ * @method TextOp setLn(int $ln)
+ * @method TextOp setAlign(string $align)
+ * @method TextOp setFill(boolean $fill)
+ * @method TextOp setLink(string $link)
+ * @method TextOp setStretch(int $stretch)
+ * @method TextOp setIgnoreMinHeight(boolean $ignoreMinHeight)
+ * @method TextOp setCalign(string $calign)
+ * @method TextOp setValign(string $valign)
+ * @method TextOp setFstroke(boolean $fstroke)
+ * @method TextOp setFclip(boolean $fclip)
+ * @method TextOp setFfill(boolean $ffill)
+ * @method TextOp setRtloff(boolean $rtloff)
  *
  * @method int getX()
  * @method int getY()

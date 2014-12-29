@@ -9,34 +9,34 @@
 namespace org\majkel\tcpdfwarper;
 
 /**
- * Class Cell
+ * Class CellOp
  * @package org\majkel\tcpdfwarper
  *
- * @property int $w;
- * @property int $h;
- * @property string $txt;
- * @property int $border;
- * @property int $ln;
- * @property string $align;
- * @property boolean $fill;
- * @property string $link;
- * @property int $stretch;
- * @property boolean $ignoreMinHeight;
- * @property string $calign;
- * @property string $valign;
+ * @property int $w
+ * @property int $h
+ * @property string $txt
+ * @property int $border
+ * @property int $ln
+ * @property string $align
+ * @property boolean $fill
+ * @property string $link
+ * @property int $stretch
+ * @property boolean $ignoreMinHeight
+ * @property string $calign
+ * @property string $valign
  *
- * @method ImageOp setW(int $w)
- * @method ImageOp setH(int $h)
- * @method ImageOp setTxt(string $txt)
- * @method ImageOp setBorder(int $border)
- * @method ImageOp setLn(int $ln)
- * @method ImageOp setAlign(string $align)
- * @method ImageOp setFill(boolean $fill)
- * @method ImageOp setLink(string $link)
- * @method ImageOp setStretch(int $stretch)
- * @method ImageOp setIgnoreMinHeight(boolean $ignoreMinHeight)
- * @method ImageOp setCalign(string $calign)
- * @method ImageOp setValign(string $valign)
+ * @method CellOp setW(int $w)
+ * @method CellOp setH(int $h)
+ * @method CellOp setTxt(string $txt)
+ * @method CellOp setBorder(int $border)
+ * @method CellOp setLn(int $ln)
+ * @method CellOp setAlign(string $align)
+ * @method CellOp setFill(boolean $fill)
+ * @method CellOp setLink(string $link)
+ * @method CellOp setStretch(int $stretch)
+ * @method CellOp setIgnoreMinHeight(boolean $ignoreMinHeight)
+ * @method CellOp setCalign(string $calign)
+ * @method CellOp setValign(string $valign)
  *
  * @method int getW()
  * @method int getH()

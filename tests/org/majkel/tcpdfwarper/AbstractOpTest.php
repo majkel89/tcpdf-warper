@@ -128,6 +128,13 @@ class AbstractOpTest extends \PHPUnit_Framework_TestCase {
 		), $actualArgs);
 	}
 
+	/**
+	 * @covers ::__set
+	 * @covers ::__get
+	 * @covers ::__call
+	 * @covers ::__isset
+	 * @covers ::__unset
+	 */
 	public function testMagicArguments() {
 		$obj = $this->mock(self::CLS)->new();
 
@@ -160,11 +167,6 @@ class AbstractOpTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @expectedException \org\majkel\tcpdfwarper\MissingMethodException
 	 * @expectedExceptionMessage Call to undefined method `doesNotExists`
-	 * @covers ::__set
-	 * @covers ::__get
-	 * @covers ::__call
-	 * @covers ::__isset
-	 * @covers ::__unset
 	 */
 	public function testMagicArgumentsSettersException() {
 		$obj = $this->mock(self::CLS)->new();

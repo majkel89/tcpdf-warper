@@ -60,9 +60,8 @@ abstract class OpTestAbstract extends \PHPUnit_Framework_TestCase {
 
 	protected function constructArguments() {
 		$arguments = $this->getExceptedArguments();
-		$index = 0;
 		foreach ($arguments as $key => $value) {
-			$arguments[$key] = $index++;
+			$arguments[$key] = rand(10000, 99999);
 		}
 		return $arguments;
 	}
@@ -85,6 +84,41 @@ abstract class OpTestAbstract extends \PHPUnit_Framework_TestCase {
 		$actualArguments = $this->reflect($obj)->getArguments();
 
 		self::assertSame($exceptedArguments, $actualArguments);
+	}
+
+	/**
+	 * @coversNothing
+	 */
+	public function testDocConfiguration() {
+		$class = new \ReflectionClass($this->getClass());
+		$comment = $class->getDocComment();
+
+		$shortClass = $class->getShortName();
+		$invalidArgs = array();
+
+		foreach (array_keys($this->getExceptedArguments()) as $argName) {
+			$arg = $this->processArgName($argName);
+			$Arg = ucfirst($arg);
+
+			$patternProp = "#\s@property\s+\w+\s+\\\$$arg\s#";
+			if (!preg_match($patternProp, $comment)) {
+				$invalidArgs[] = "Invalid property `$arg` ($patternProp)";
+			}
+
+			$patternSetter = "#\s@method\s+$shortClass\s+set{$Arg}\(\w+\s+\\\$$arg\)#";
+			if (!preg_match($patternSetter, $comment)) {
+				$invalidArgs[] = "Invalid setter `$arg` ($patternSetter)";
+			}
+
+			$patternGetter = "#\s@method\s+\w+\s+get{$Arg}\(\)#";
+			if (!preg_match($patternGetter, $comment)) {
+				$invalidArgs[] = "Invalid getter `$arg` ($patternGetter)";
+			}
+		}
+
+		if (count($invalidArgs) > 0) {
+			self::fail("Doc invalid:\n\t".implode("\n\t",$invalidArgs));
+		}
 	}
 
 	/**

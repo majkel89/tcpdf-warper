@@ -12,25 +12,25 @@ namespace org\majkel\tcpdfwarper;
  * Class Cell
  * @package org\majkel\tcpdfwarper
  *
- * @property string $file;
- * @property int $x;
- * @property int $y;
- * @property int $w;
- * @property int $h;
- * @property int $dpi;
- * @property string $type;
- * @property string $palign;
- * @property int $border;
- * @property string $align;
- * @property string $link;
- * @property boolean $resize;
- * @property boolean $ismask;
- * @property boolean $imgmask;
- * @property boolean $fitbox;
- * @property boolean $hidden;
- * @property boolean $fitonpage;
- * @property boolean $alt;
- * @property array $altimgs;
+ * @property string $file
+ * @property int $x
+ * @property int $y
+ * @property int $w
+ * @property int $h
+ * @property int $dpi
+ * @property string $type
+ * @property string $palign
+ * @property int $border
+ * @property string $align
+ * @property string $link
+ * @property boolean $resize
+ * @property boolean $ismask
+ * @property boolean $imgmask
+ * @property boolean $fitbox
+ * @property boolean $hidden
+ * @property boolean $fitonpage
+ * @property boolean $alt
+ * @property array $altimgs
  *
  * @method ImageOp setFile(string $file)
  * @method ImageOp setX(int $x)

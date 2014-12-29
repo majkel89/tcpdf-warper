@@ -12,23 +12,23 @@ namespace org\majkel\tcpdfwarper;
  * Class MultiCell
  * @package org\majkel\tcpdfwarper
  *
- * @property int $w;
- * @property int $h;
- * @property string $txt;
- * @property int $border;
- * @property int $ln;
- * @property string $align;
- * @property boolean $fill;
- * @property string $link;
- * @property int $stretch;
- * @property string $valign;
- * @property int $x;
- * @property int $y;
- * @property boolean $reseth;
- * @property boolean $ishtml;
- * @property boolean $autopadding;
- * @property int $maxh;
- * @property boolean $fitcell;
+ * @property int $w
+ * @property int $h
+ * @property string $txt
+ * @property int $border
+ * @property int $ln
+ * @property string $align
+ * @property boolean $fill
+ * @property string $link
+ * @property int $stretch
+ * @property string $valign
+ * @property int $x
+ * @property int $y
+ * @property boolean $reseth
+ * @property boolean $ishtml
+ * @property boolean $autopadding
+ * @property int $maxh
+ * @property boolean $fitcell
  *
  * @method MultiCellOp setW(int $w)
  * @method MultiCellOp setH(int $h)
@@ -63,7 +63,7 @@ namespace org\majkel\tcpdfwarper;
  * @method boolean getReseth()
  * @method boolean getIshtml()
  * @method boolean getAutopadding()
- * @method int getmaxh()
+ * @method int getMaxh()
  * @method boolean getFitcell()
  */
 class MultiCellOp extends AbstractOp {
