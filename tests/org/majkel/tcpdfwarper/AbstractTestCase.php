@@ -10,9 +10,12 @@ namespace org\majkel\tcpdfwarper;
 
 use Xpmock\TestCaseTrait;
 
-// function getenv($name) {
-// 	return 'onigoetz/fpdi_tcpdf';
-// }
+//function getenv($name) {
+//	if ($name == AbstractTestCase::ENV_PACKAGE) {
+//		return 'onigoetz/fpdi_tcpdf';
+//	}
+//	return \getenv($name);
+//}
 
 class DummyTcpdf {
 
@@ -34,6 +37,8 @@ class AbstractTestCase extends \PHPUnit_Framework_TestCase {
 
 	const DEFAULT_TCPDF = '\TCPDF';
 
+	const ENV_PACKAGE = 'TCPDF_PACKAGE';
+
 	protected static $packageMapping = array(
 			'tecnick.com/tcpdf' => self::DEFAULT_TCPDF,
 			'onigoetz/fpdi_tcpdf' => '\fpdi\FPDI',
@@ -46,7 +51,7 @@ class AbstractTestCase extends \PHPUnit_Framework_TestCase {
 	 */
 	public function getTcpdfClass() {
 		if (is_null($this->tcpdfClassName)) {
-			$package = strtolower(trim(getenv('TCPDF_PACKAGE')));
+			$package = strtolower(trim(getenv(self::ENV_PACKAGE)));
 			if ($package) {
 				if (isset(self::$packageMapping[$package])) {
 					$this->tcpdfClassName = self::$packageMapping[$package];
