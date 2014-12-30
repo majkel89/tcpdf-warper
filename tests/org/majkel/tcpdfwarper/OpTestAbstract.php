@@ -121,7 +121,7 @@ abstract class OpTestAbstract extends AbstractTestCase {
 		if (count($invalidArgs) > 0) {
 			self::fail("Doc invalid:\n\t".implode("\n\t",$invalidArgs));
 		}
-		$this->success();
+		self::success();
 	}
 
 	/**

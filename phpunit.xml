@@ -6,6 +6,10 @@
          cacheTokens="false"
          colors="true"
          strict="true"
+         beStrictAboutTestsThatDoNotTestAnything="true"
+         checkForUnintentionallyCoveredCode="false"
+         beStrictAboutOutputDuringTests="true"
+         beStrictAboutTestSize="true"
          verbose="true">
     <testsuites>
         <testsuite name="Test suite">

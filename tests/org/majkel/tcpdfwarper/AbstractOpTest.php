@@ -25,9 +25,9 @@ class AbstractOpTest extends AbstractTestCase {
 	 */
 	public function testRender() {
 		$obj = $this->mock(self::CLS)
-				->put()->new();
+				->put($this->once())
+				->new();
 		$obj->render();
-		$this->success();
 	}
 
 	/**
@@ -35,9 +35,9 @@ class AbstractOpTest extends AbstractTestCase {
 	 */
 	public function testWrite() {
 		$obj = $this->mock(self::CLS)
-				->put()->new();
+				->put($this->once())
+				->new();
 		$obj->write();
-		$this->success();
 	}
 
 	/**
@@ -45,7 +45,7 @@ class AbstractOpTest extends AbstractTestCase {
 	 */
 	public function testPut() {
 		$pdf = $this->getTcpdfMock();
-		$pdf->expects($this->any())
+		$pdf->expects($this->once())
 				->method('AddSpotColor')
 				->with(1, 2, 3, 4, 5);
 
@@ -55,7 +55,6 @@ class AbstractOpTest extends AbstractTestCase {
 				->getArguments([], [1, 2, 3, 4, 5])
 				->new();
 		$obj->put();
-		$this->success();
 	}
 
 	/**
