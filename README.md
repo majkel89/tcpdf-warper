@@ -1,17 +1,18 @@
 TCPDF Warper
 ============
 
-[![Build Status](https://travis-ci.org/majkel89/tcpdf-warper.svg?branch=master)](https://travis-ci.org/majkel89/tcpdf-warper)
+[![Build Status](https://travis-ci.org/majkel89/tcpdf-warper.svg?branch=v0.1.1)](https://travis-ci.org/majkel89/tcpdf-warper)
 
 **Author**: Michał (majkel) Kowalik <maf.michal@gmail.com>
 
-**Version**: 0.1.0-alpha
+**Version**: 0.1.1
 
 **Minimum PHP**: 5.4
 
 Installation
 ------------
 
+     composer require tecnick.com/tcpdf       ### or any TCPDF library
      composer require org.majkel/tcpdfwarper
 
 About
@@ -57,5 +58,6 @@ Features
 
   - Fully unit tested
   - Full code coverage
+  - Code completion friendly
   - Tested against multiple php versions (5.6 - 5.4, hhvm)
   - Tested against multiple TCPDF libraries (see travis)
