@@ -1,6 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
+ * Package: org\majkel\tcpdfwarper
  * User: Michał (majkel) Kowalik <maf.michal@gmail.com>
  * Date: 12/28/2014
  * Time: 22:36
@@ -9,7 +10,7 @@
 namespace org\majkel\tcpdfwarper;
 
 /**
- * Class TCPDFWarperTest
+ * Class MissingMethodExceptionTest
  * @package org\majkel\tcpdfwarper
  * @coversDefaultClass \org\majkel\tcpdfwarper\MissingMethodException
  */

@@ -1,6 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
+ * Package: org\majkel\tcpdfwarper
  * User: Michał (majkel) Kowalik <maf.michal@gmail.com>
  * Date: 12/28/2014
  * Time: 18:17
@@ -24,9 +25,9 @@ class AbstractOpTest extends AbstractTestCase {
 	 */
 	public function testRender() {
 		$obj = $this->mock(self::CLS)
-				->put()
-				->new();
+				->put()->new();
 		$obj->render();
+		$this->success();
 	}
 
 	/**
@@ -34,9 +35,9 @@ class AbstractOpTest extends AbstractTestCase {
 	 */
 	public function testWrite() {
 		$obj = $this->mock(self::CLS)
-				->put()
-				->new();
+				->put()->new();
 		$obj->write();
+		$this->success();
 	}
 
 	/**
@@ -54,6 +55,7 @@ class AbstractOpTest extends AbstractTestCase {
 				->getArguments([], [1, 2, 3, 4, 5])
 				->new();
 		$obj->put();
+		$this->success();
 	}
 
 	/**
@@ -90,6 +92,7 @@ class AbstractOpTest extends AbstractTestCase {
 		$obj = $this->mock(self::CLS)->new();
 		$obj->setProperty(1);
 		$this->reflect($obj)->assertArgExists('property');
+		$this->success();
 	}
 
 	/**

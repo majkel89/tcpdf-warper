@@ -1,6 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
+ * Package: org\majkel\tcpdfwarper
  * User: Michał (majkel) Kowalik <maf.michal@gmail.com>
  * Date: 12/28/2014
  * Time: 18:17
@@ -22,7 +23,7 @@ class DummyTcpdf {
 }
 
 /**
- * Class AbstractOpTest
+ * Class AbstractTestCase
  * @package org\majkel\tcpdfwarper
  * @coversDefaultClass \org\majkel\tcpdfwarper\AbstractOp
  */
@@ -74,5 +75,12 @@ class AbstractTestCase extends \PHPUnit_Framework_TestCase {
 		return $this->getMockBuilder($this->getTcpdfClass())
 				->disableOriginalConstructor()
 				->getMock();
+	}
+
+	/**
+	 * For strict mode marks test as success
+	 */
+	protected function success() {
+		self::assertTrue(true);
 	}
 }

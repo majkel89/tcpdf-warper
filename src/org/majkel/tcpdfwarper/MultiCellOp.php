@@ -1,6 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
+ * Package: org\majkel\tcpdfwarper
  * User: Michał (majkel) Kowalik <maf.michal@gmail.com>
  * Date: 12/28/2014
  * Time: 15:33
@@ -9,7 +10,7 @@
 namespace org\majkel\tcpdfwarper;
 
 /**
- * Class MultiCell
+ * Class MultiCellOp
  * @package org\majkel\tcpdfwarper
  *
  * @property int $w

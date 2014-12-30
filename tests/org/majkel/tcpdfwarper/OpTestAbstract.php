@@ -1,6 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
+ * Package: org\majkel\tcpdfwarper
  * User: Michał (majkel) Kowalik <maf.michal@gmail.com>
  * Date: 12/28/2014
  * Time: 20:41
@@ -10,6 +11,10 @@ namespace org\majkel\tcpdfwarper;
 
 require_once 'AbstractTestCase.php';
 
+/**
+ * Class OpTestAbstract
+ * @package org\majkel\tcpdfwarper
+ */
 abstract class OpTestAbstract extends AbstractTestCase {
 
 	/**
@@ -116,6 +121,7 @@ abstract class OpTestAbstract extends AbstractTestCase {
 		if (count($invalidArgs) > 0) {
 			self::fail("Doc invalid:\n\t".implode("\n\t",$invalidArgs));
 		}
+		$this->success();
 	}
 
 	/**

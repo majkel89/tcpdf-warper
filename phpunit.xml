@@ -5,6 +5,7 @@
          backupStaticAttributes="true"
          cacheTokens="false"
          colors="true"
+         strict="true"
          verbose="true">
     <testsuites>
         <testsuite name="Test suite">
