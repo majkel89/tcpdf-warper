@@ -1,7 +1,7 @@
 TCPDF Warper
 ============
 
-[![Build Status](https://travis-ci.org/majkel89/tcpdf-warper.svg?branch=v0.1.1)](https://travis-ci.org/majkel89/tcpdf-warper)
+[![Build Status](https://travis-ci.org/majkel89/tcpdf-warper.svg?branch=master)](https://travis-ci.org/majkel89/tcpdf-warper)
 
 **Author**: Michał (majkel) Kowalik <maf.michal@gmail.com>
 
