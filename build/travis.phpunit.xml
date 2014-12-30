@@ -5,7 +5,6 @@
          backupStaticAttributes="true"
          cacheTokens="false"
          colors="true"
-         strict="true"
          beStrictAboutTestsThatDoNotTestAnything="true"
          checkForUnintentionallyCoveredCode="false"
          beStrictAboutOutputDuringTests="true"
