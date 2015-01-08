@@ -5,7 +5,7 @@ TCPDF Warper
 
 **Author**: Michał (majkel) Kowalik <maf.michal@gmail.com>
 
-**Version**: 0.1.1
+**Version**: 0.1.2
 
 **Minimum PHP**: 5.4
 
