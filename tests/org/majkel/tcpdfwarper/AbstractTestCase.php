@@ -18,9 +18,7 @@ use Xpmock\TestCaseTrait;
 //	return \getenv($name);
 //}
 
-class DummyTcpdf {
-
-}
+// require_once 'DummyTcpdf.php';
 
 /**
  * Class AbstractTestCase

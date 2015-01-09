@@ -31,14 +31,14 @@ class CellOpTest extends OpTestAbstract {
 	 * @covers ::setWH
 	 */
 	public function testSetWH() {
-		$this->_testSetWH();
+		$this->setWHTest();
 	}
 
 	/**
 	 * @covers ::setSize
 	 */
 	public function testSetSize() {
-		$this->_testSetSize();
+		$this->setSizeTest();
 	}
 
 	/**

@@ -20,12 +20,12 @@ abstract class OpTestAbstract extends AbstractTestCase {
 	/**
 	 * @return string
 	 */
-	protected abstract function getClass();
+	abstract protected function getClass();
 
 	/**
 	 * @return string
 	 */
-	protected abstract function getMethod();
+	abstract protected function getMethod();
 
 	/**
 	 * @param string $name
@@ -119,7 +119,7 @@ abstract class OpTestAbstract extends AbstractTestCase {
 		}
 
 		if (count($invalidArgs) > 0) {
-			self::fail("Doc invalid:\n\t".implode("\n\t",$invalidArgs));
+			self::fail("Doc invalid:\n\t".implode("\n\t", $invalidArgs));
 		}
 		self::success();
 	}
@@ -143,26 +143,26 @@ abstract class OpTestAbstract extends AbstractTestCase {
 		$obj->put();
 	}
 
-	protected function _testSet2Args($method, $p1, $p2) {
+	protected function set2ArgsTest($method, $p1, $p2) {
 		$obj = $this->getObject();
 		$obj->$method(1, 2);
 		self::assertSame(1, $obj->$p1);
 		self::assertSame(2, $obj->$p2);
 	}
 
-	protected function _testSetWH() {
-		$this->_testSet2Args('setWH', 'w', 'h');
+	protected function setWHTest() {
+		$this->set2ArgsTest('setWH', 'w', 'h');
 	}
 
-	protected function _testSetSize() {
-		$this->_testSet2Args('setSize', 'w', 'h');
+	protected function setSizeTest() {
+		$this->set2ArgsTest('setSize', 'w', 'h');
 	}
 
-	protected function _testSetXY() {
-		$this->_testSet2Args('setXY', 'x', 'y');
+	protected function setXYTest() {
+		$this->set2ArgsTest('setXY', 'x', 'y');
 	}
 
-	protected function _testSetPos() {
-		$this->_testSet2Args('setPos', 'x', 'y');
+	protected function setPosTest() {
+		$this->set2ArgsTest('setPos', 'x', 'y');
 	}
 }

@@ -52,14 +52,14 @@ class TextOpTest extends OpTestAbstract {
 	 * @covers ::setXY
 	 */
 	public function testSetXY() {
-		$this->_testSetXY();
+		$this->setXYTest();
 	}
 
 	/**
 	 * @covers ::setPos
 	 */
 	public function testSetPos() {
-		$this->_testSetPos();
+		$this->setPosTest();
 	}
 
 	/**

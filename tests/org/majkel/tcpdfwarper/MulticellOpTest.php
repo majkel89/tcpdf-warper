@@ -52,28 +52,28 @@ class MultiCellOpTest extends OpTestAbstract {
 	 * @covers ::setWH
 	 */
 	public function testSetWH() {
-		$this->_testSetWH();
+		$this->setWHTest();
 	}
 
 	/**
 	 * @covers ::setSize
 	 */
 	public function testSetSize() {
-		$this->_testSetSize();
+		$this->setSizeTest();
 	}
 
 	/**
 	 * @covers ::setXY
 	 */
 	public function testSetXY() {
-		$this->_testSetXY();
+		$this->setXYTest();
 	}
 
 	/**
 	 * @covers ::setPos
 	 */
 	public function testSetPos() {
-		$this->_testSetPos();
+		$this->setPosTest();
 	}
 
 	/**
