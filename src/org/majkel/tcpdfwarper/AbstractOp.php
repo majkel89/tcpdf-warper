@@ -121,7 +121,7 @@ abstract class AbstractOp {
 	 */
 	public function __call($name, $arguments) {
 		$prefix = substr($name, 0, 3);
-		$suffix = strtolower(substr($name, 3));
+		$suffix = lcfirst(substr($name, 3));
 		if ($prefix === 'set') {
 			$this->$suffix = count($arguments) > 0 ? $arguments[0] : null;
 			return $this;

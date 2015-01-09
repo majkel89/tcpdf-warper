@@ -162,6 +162,22 @@ class AbstractOpTest extends AbstractTestCase {
 		self::assertNull($obj->getProperty());
 	}
 
+	public function testSetPropCamelCase() {
+		$obj = $this->mock(self::CLS)->new();
+
+		$obj->propCamelCase = 1;
+
+		self::assertSame(1, $obj->getPropCamelCase());
+	}
+
+	public function testSetMethodCamelCase() {
+		$obj = $this->mock(self::CLS)->new();
+
+		$obj->setPropCamelCase(1);
+
+		self::assertSame(1, $obj->propCamelCase);
+	}
+
 	/**
 	 * @expectedException \org\majkel\tcpdfwarper\MissingMethodException
 	 * @expectedExceptionMessage Call to undefined method `doesNotExists`
