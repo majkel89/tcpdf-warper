@@ -1,6 +1,6 @@
 {
     "name": "majkel.org/tcpdf-warper",
-    "description": "TCPDF warper. Shortcuts library calls.",
+    "description": "Create PDF documents using TCPDF fluent interface",
     "license": "Freeware",
     "type": "library",
     "keywords": ["tcpdf","warper","pdf"],
@@ -11,13 +11,13 @@
         }
     ],
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=5.4.0"
     },
     "require-dev": {
-        "tecnick.com/tcpdf": "~6.2",
-        "phpunit/phpunit": "~4.4",
-        "ptrofimov/xpmock": "~1.1",
-        "onigoetz/fpdi_tcpdf": "~1.5"
+        "tecnick.com/tcpdf": "*",
+        "phpunit/phpunit": "*",
+        "ptrofimov/xpmock": "*",
+        "onigoetz/fpdi_tcpdf": "*"
     },
     "autoload": {
         "psr-0": {

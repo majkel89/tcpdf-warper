@@ -105,6 +105,37 @@ class AbstractOpTest extends AbstractTestCase {
 	}
 
 	/**
+	 * @covers ::assertArgsExist
+	 */
+	public function testAssertArgsExist() {
+		$obj = $this->mock(self::CLS)->new();
+		$obj->property = true;
+		$this->reflect($obj)->assertArgsExist(array('property'));
+		$this->success();
+	}
+
+	/**
+	 * @expectedException \org\majkel\tcpdfwarper\MissingArgException
+	 * @expectedExceptionMessage Argument `property` is missing
+	 * @covers ::assertArgsExist
+	 */
+	public function testAssertArgsExistException() {
+		$obj = $this->mock(self::CLS)->new();
+		$this->reflect($obj)->assertArgsExist(array('property'));
+	}
+
+	/**
+	 * @covers ::setArguments
+	 */
+	public function testSetArguments() {
+		$obj = $this->mock(self::CLS)->new();
+		$obj->setArguments(array(
+			'property' => 1
+		));
+		self::assertSame(1, $obj->property);
+	}
+
+	/**
 	 * @covers ::getArguments
 	 */
 	public function testGetArguments() {

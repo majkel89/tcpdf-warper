@@ -137,8 +137,17 @@ abstract class AbstractOp {
 	/**
 	 * @return array
 	 */
-	protected function getArguments() {
+	public function getArguments() {
 		return array_merge(static::$defaultArguments, $this->_arguments);
+	}
+
+	/**
+	 * @param array $arguments
+	 * @return $this
+	 */
+	public function setArguments(array $arguments) {
+		$this->_arguments = $arguments;
+		return $this;
 	}
 
 	/**
@@ -148,6 +157,16 @@ abstract class AbstractOp {
 	protected function assertArgExists($argName) {
 		if (!isset($this->_arguments[$argName])) {
 			throw new MissingArgException($argName);
+		}
+	}
+
+	/**
+	 * @param string[] $arguments
+	 * @throws MissingArgException
+	 */
+	protected function assertArgsExist(array $arguments) {
+		foreach ($arguments as $argument) {
+			$this->assertArgExists($argument);
 		}
 	}
 }

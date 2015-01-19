@@ -5,7 +5,7 @@ TCPDF Warper
 
 **Author**: Michał (majkel) Kowalik <maf.michal@gmail.com>
 
-**Version**: 0.1.3
+**Version**: 0.2.0
 
 **Minimum PHP**: 5.4
 
@@ -43,7 +43,14 @@ Following methods are supported
   * Cell (buildCell)
   * Multicell (buildMulticell)
   * Image (buildImage)
+  * ImageSvg (buildImageSvg)
+  * ImageEps (buildImageEps)
   * Text (buildText)
+  * writeHTML (buildHtml)
+  * writeHTMLCell (buildHtmlCell)
+  * write1DBarcode (buildBarcode1d)
+  * write2DBarcode (buildBarcode2d)
+  * Write (buildWrite)
 
 If you are using some kind of fork of TCPDF, you can write your own warper.
 Every statement builder allows you to inject $tcpdf object.
@@ -58,6 +65,6 @@ Features
 
   - Fully unit tested
   - Full code coverage
-  - Code completion friendly
+  - Code completion friendly (including documentation)
   - Tested against multiple php versions (5.6 - 5.4, hhvm)
   - Tested against multiple TCPDF libraries (see travis)

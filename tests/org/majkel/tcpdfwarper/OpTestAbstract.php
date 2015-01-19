@@ -32,9 +32,7 @@ abstract class OpTestAbstract extends AbstractTestCase {
 	 * @return string
 	 */
 	protected function processArgName($name) {
-		return preg_replace_callback('#_([A-Za-z])#', function($matches){
-			return strtoupper($matches[1]);
-		}, trim($name, '_'));
+		return generator\ClassDefinition::snakeToCamel($name);
 	}
 
 	/**

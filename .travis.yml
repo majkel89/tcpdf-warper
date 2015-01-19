@@ -5,12 +5,17 @@ php:
     - 5.4
     - hhvm
 
+matrix:
+    allow_failures:
+        - php: hhvm
+
 env:
-    - TCPDF_PACKAGE="tecnick.com/tcpdf"   TCPDF_VERSION="~6.2"
+    - TCPDF_PACKAGE="tecnick.com/tcpdf"   TCPDF_VERSION="*"
     - TCPDF_PACKAGE="tecnick.com/tcpdf"   TCPDF_VERSION="6.1.x"
-    - TCPDF_PACKAGE="onigoetz/fpdi_tcpdf" TCPDF_VERSION="~1.5"
+    - TCPDF_PACKAGE="onigoetz/fpdi_tcpdf" TCPDF_VERSION="*"
 
 install:
+    - composer self-update
     - rm -rf composer.json composer.lock
     - cp build/travis.composer.json composer.json
     - composer install --dev

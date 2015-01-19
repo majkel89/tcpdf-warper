@@ -1,10 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
+ * Created by Generator.
  * Package: org\majkel\tcpdfwarper
  * User: Michał (majkel) Kowalik <maf.michal@gmail.com>
- * Date: 12/28/2014
- * Time: 15:33
+ * Date: 2015-01-19
+ * Time: 02:40:34
  */
 
 namespace org\majkel\tcpdfwarper;
@@ -13,59 +13,65 @@ namespace org\majkel\tcpdfwarper;
  * Class MultiCellOp
  * @package org\majkel\tcpdfwarper
  *
- * @property int $w
- * @property int $h
- * @property string $txt
- * @property int $border
- * @property int $ln
- * @property string $align
- * @property boolean $fill
- * @property string $link
- * @property int $stretch
- * @property string $valign
- * @property int $x
- * @property int $y
- * @property boolean $reseth
- * @property boolean $ishtml
- * @property boolean $autopadding
- * @property int $maxh
- * @property boolean $fitcell
+ * This method allows printing text with line breaks.
+ * They can be automatic (as soon as the text reaches the right border of the cell) or explicit (via the \n character). As many cells as necessary are output, one below the other.<br />
+ * Text can be aligned, centered or justified. The cell block can be framed and the background painted.
  *
- * @method MultiCellOp setW(int $w)
- * @method MultiCellOp setH(int $h)
- * @method MultiCellOp setTxt(string $txt)
- * @method MultiCellOp setBorder(int $border)
- * @method MultiCellOp setLn(int $ln)
- * @method MultiCellOp setAlign(string $align)
- * @method MultiCellOp setFill(boolean $fill)
- * @method MultiCellOp setLink(string $link)
- * @method MultiCellOp setStretch(int $stretch)
- * @method MultiCellOp setValign(string $valign)
- * @method MultiCellOp setX(int $x)
- * @method MultiCellOp setY(int $y)
- * @method MultiCellOp setReseth(boolean $reseth)
- * @method MultiCellOp setIshtml(boolean $ishtml)
- * @method MultiCellOp setAutopadding(boolean $autopadding)
- * @method MultiCellOp setMaxh(int $maxh)
- * @method MultiCellOp setFitcell(boolean $fitcell)
+ * @property float $w Width of cells. If 0, they extend up to the right margin of the page.
+ * @property float $h Cell minimum height. The cell extends automatically if needed.
+ * @property string $txt String to print
+ * @property mixed $border Indicates if borders must be drawn around the cell. The value can be a number:<ul><li>0: no border (default)</li><li>1: frame</li></ul> or a string containing some or all of the following characters (in any order):<ul><li>L: left</li><li>T: top</li><li>R: right</li><li>B: bottom</li></ul> or an array of line styles for each border group - for example: array('LTRB' => array('width' => 2, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)))
+ * @property string $align Allows to center or align the text. Possible values are:<ul><li>L or empty string: left align</li><li>C: center</li><li>R: right align</li><li>J: justification (default value when $ishtml=false)</li></ul>
+ * @property boolean $fill Indicates if the cell background must be painted (true) or transparent (false).
+ * @property int $ln Indicates where the current position should go after the call. Possible values are:<ul><li>0: to the right</li><li>1: to the beginning of the next line [DEFAULT]</li><li>2: below</li></ul>
+ * @property float $x x position in user units
+ * @property float $y y position in user units
+ * @property boolean $reseth if true reset the last cell height (default true).
+ * @property int $stretch font stretch mode: <ul><li>0 = disabled</li><li>1 = horizontal scaling only if text is larger than cell width</li><li>2 = forced horizontal scaling to fit cell width</li><li>3 = character spacing only if text is larger than cell width</li><li>4 = forced character spacing to fit cell width</li></ul> General font stretching and scaling values will be preserved when possible.
+ * @property boolean $ishtml INTERNAL USE ONLY -- set to true if $txt is HTML content (default = false). Never set this parameter to true, use instead writeHTMLCell() or writeHTML() methods.
+ * @property boolean $autopadding if true, uses internal padding and automatically adjust it to account for line width.
+ * @property float $maxh maximum height. It should be >= $h and less then remaining space to the bottom of the page, or 0 for disable this feature. This feature works only when $ishtml=false.
+ * @property string $valign Vertical alignment of text (requires $maxh = $h > 0). Possible values are:<ul><li>T: TOP</li><li>M: middle</li><li>B: bottom</li></ul>. This feature works only when $ishtml=false and the cell must fit in a single page.
+ * @property boolean $fitcell if true attempt to fit all the text within the cell by reducing the font size (do not work in HTML mode). $maxh must be greater than 0 and wqual to $h.
  *
- * @method int getW()
- * @method int getH()
- * @method string getTxt()
- * @method int getBorder()
- * @method int getLn()
- * @method string getAlign()
- * @method boolean getFill()
- * @method string getLink()
- * @method int getStretch()
- * @method string getValign()
- * @method int getX()
- * @method int getY()
- * @method boolean getReseth()
- * @method boolean getIshtml()
- * @method boolean getAutopadding()
- * @method int getMaxh()
- * @method boolean getFitcell()
+ * @method MultiCellOp setW(float $w) Width of cells. If 0, they extend up to the right margin of the page.
+ * @method MultiCellOp setH(float $h) Cell minimum height. The cell extends automatically if needed.
+ * @method MultiCellOp setTxt(string $txt) String to print
+ * @method MultiCellOp setBorder(mixed $border) Indicates if borders must be drawn around the cell. The value can be a number:<ul><li>0: no border (default)</li><li>1: frame</li></ul> or a string containing some or all of the following characters (in any order):<ul><li>L: left</li><li>T: top</li><li>R: right</li><li>B: bottom</li></ul> or an array of line styles for each border group - for example: array('LTRB' => array('width' => 2, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)))
+ * @method MultiCellOp setAlign(string $align) Allows to center or align the text. Possible values are:<ul><li>L or empty string: left align</li><li>C: center</li><li>R: right align</li><li>J: justification (default value when $ishtml=false)</li></ul>
+ * @method MultiCellOp setFill(boolean $fill) Indicates if the cell background must be painted (true) or transparent (false).
+ * @method MultiCellOp setLn(int $ln) Indicates where the current position should go after the call. Possible values are:<ul><li>0: to the right</li><li>1: to the beginning of the next line [DEFAULT]</li><li>2: below</li></ul>
+ * @method MultiCellOp setX(float $x) x position in user units
+ * @method MultiCellOp setY(float $y) y position in user units
+ * @method MultiCellOp setReseth(boolean $reseth) if true reset the last cell height (default true).
+ * @method MultiCellOp setStretch(int $stretch) font stretch mode: <ul><li>0 = disabled</li><li>1 = horizontal scaling only if text is larger than cell width</li><li>2 = forced horizontal scaling to fit cell width</li><li>3 = character spacing only if text is larger than cell width</li><li>4 = forced character spacing to fit cell width</li></ul> General font stretching and scaling values will be preserved when possible.
+ * @method MultiCellOp setIshtml(boolean $ishtml) INTERNAL USE ONLY -- set to true if $txt is HTML content (default = false). Never set this parameter to true, use instead writeHTMLCell() or writeHTML() methods.
+ * @method MultiCellOp setAutopadding(boolean $autopadding) if true, uses internal padding and automatically adjust it to account for line width.
+ * @method MultiCellOp setMaxh(float $maxh) maximum height. It should be >= $h and less then remaining space to the bottom of the page, or 0 for disable this feature. This feature works only when $ishtml=false.
+ * @method MultiCellOp setValign(string $valign) Vertical alignment of text (requires $maxh = $h > 0). Possible values are:<ul><li>T: TOP</li><li>M: middle</li><li>B: bottom</li></ul>. This feature works only when $ishtml=false and the cell must fit in a single page.
+ * @method MultiCellOp setFitcell(boolean $fitcell) if true attempt to fit all the text within the cell by reducing the font size (do not work in HTML mode). $maxh must be greater than 0 and wqual to $h.
+ *
+ * @method float getW() Width of cells. If 0, they extend up to the right margin of the page.
+ * @method float getH() Cell minimum height. The cell extends automatically if needed.
+ * @method string getTxt() String to print
+ * @method mixed getBorder() Indicates if borders must be drawn around the cell. The value can be a number:<ul><li>0: no border (default)</li><li>1: frame</li></ul> or a string containing some or all of the following characters (in any order):<ul><li>L: left</li><li>T: top</li><li>R: right</li><li>B: bottom</li></ul> or an array of line styles for each border group - for example: array('LTRB' => array('width' => 2, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)))
+ * @method string getAlign() Allows to center or align the text. Possible values are:<ul><li>L or empty string: left align</li><li>C: center</li><li>R: right align</li><li>J: justification (default value when $ishtml=false)</li></ul>
+ * @method boolean getFill() Indicates if the cell background must be painted (true) or transparent (false).
+ * @method int getLn() Indicates where the current position should go after the call. Possible values are:<ul><li>0: to the right</li><li>1: to the beginning of the next line [DEFAULT]</li><li>2: below</li></ul>
+ * @method float getX() x position in user units
+ * @method float getY() y position in user units
+ * @method boolean getReseth() if true reset the last cell height (default true).
+ * @method int getStretch() font stretch mode: <ul><li>0 = disabled</li><li>1 = horizontal scaling only if text is larger than cell width</li><li>2 = forced horizontal scaling to fit cell width</li><li>3 = character spacing only if text is larger than cell width</li><li>4 = forced character spacing to fit cell width</li></ul> General font stretching and scaling values will be preserved when possible.
+ * @method boolean getIshtml() INTERNAL USE ONLY -- set to true if $txt is HTML content (default = false). Never set this parameter to true, use instead writeHTMLCell() or writeHTML() methods.
+ * @method boolean getAutopadding() if true, uses internal padding and automatically adjust it to account for line width.
+ * @method float getMaxh() maximum height. It should be >= $h and less then remaining space to the bottom of the page, or 0 for disable this feature. This feature works only when $ishtml=false.
+ * @method string getValign() Vertical alignment of text (requires $maxh = $h > 0). Possible values are:<ul><li>T: TOP</li><li>M: middle</li><li>B: bottom</li></ul>. This feature works only when $ishtml=false and the cell must fit in a single page.
+ * @method boolean getFitcell() if true attempt to fit all the text within the cell by reducing the font size (do not work in HTML mode). $maxh must be greater than 0 and wqual to $h.
+ *
+ * @method int write() Return the number of cells or 1 for html mode.
+	 *
+ * @method int render() Return the number of cells or 1 for html mode.
+	 *
  */
 class MultiCellOp extends AbstractOp {
 
@@ -97,7 +103,8 @@ class MultiCellOp extends AbstractOp {
 	protected static $method = 'MultiCell';
 
 	/**
-	 * @return mixed
+	 * @return int Return the number of cells or 1 for html mode.
+	 *
 	 */
 	public function put() {
 		$this->assertArgExists('w');
@@ -107,42 +114,43 @@ class MultiCellOp extends AbstractOp {
 	}
 
 	/**
-	 * @param int $w
-	 * @param int $h
-	 * @return MultiCellOp
-	 */
-	public function setWH($w, $h) {
-		$this->w = $w;
-		$this->h = $h;
-		return $this;
-	}
-
-	/**
-	 * @param int $w
-	 * @param int $h
-	 * @return MultiCellOp
-	 */
-	public function setSize($w, $h) {
-		return $this->setWH($w, $h);
-	}
-
-	/**
-	 * @param int $x
-	 * @param int $y
+	 * Sets position.
+	 * @param float $x x position in user units
+	 * @param float $y y position in user units
 	 * @return MultiCellOp
 	 */
 	public function setXY($x, $y) {
-		$this->x = $x;
-		$this->y = $y;
-		return $this;
+		return $this->setX($x)->setY($y);
 	}
 
 	/**
-	 * @param int $x
-	 * @param int $y
+	 * Sets position.
+	 * @param float $x x position in user units
+	 * @param float $y y position in user units
 	 * @return MultiCellOp
 	 */
 	public function setPos($x, $y) {
-		return $this->setXY($x, $y);
+		return $this->setX($x)->setY($y);
 	}
+
+	/**
+	 * Sets size.
+	 * @param float $w Width of cells. If 0, they extend up to the right margin of the page.
+	 * @param float $h Cell minimum height. The cell extends automatically if needed.
+	 * @return MultiCellOp
+	 */
+	public function setWH($w, $h) {
+		return $this->setW($w)->setH($h);
+	}
+
+	/**
+	 * Sets size.
+	 * @param float $w Width of cells. If 0, they extend up to the right margin of the page.
+	 * @param float $h Cell minimum height. The cell extends automatically if needed.
+	 * @return MultiCellOp
+	 */
+	public function setSize($w, $h) {
+		return $this->setW($w)->setH($h);
+	}
+
 }
