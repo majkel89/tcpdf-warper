@@ -17,7 +17,8 @@
         "tecnick.com/tcpdf": "*",
         "phpunit/phpunit": "*",
         "ptrofimov/xpmock": "*",
-        "onigoetz/fpdi_tcpdf": "*"
+        "onigoetz/fpdi_tcpdf": "*",
+        "squizlabs/php_codesniffer": "*"
     },
     "autoload": {
         "psr-0": {

@@ -3,8 +3,8 @@
  * Created by Generator.
  * Package: org\majkel\tcpdfwarper
  * User: Michał (majkel) Kowalik <maf.michal@gmail.com>
- * Date: 2015-01-19
- * Time: 02:40:34
+ * Date: 2015-06-21
+ * Time: 21:02:59
  */
 
 namespace org\majkel\tcpdfwarper;
@@ -32,7 +32,7 @@ namespace org\majkel\tcpdfwarper;
  * @property boolean $autopadding if true, uses internal padding and automatically adjust it to account for line width.
  * @property float $maxh maximum height. It should be >= $h and less then remaining space to the bottom of the page, or 0 for disable this feature. This feature works only when $ishtml=false.
  * @property string $valign Vertical alignment of text (requires $maxh = $h > 0). Possible values are:<ul><li>T: TOP</li><li>M: middle</li><li>B: bottom</li></ul>. This feature works only when $ishtml=false and the cell must fit in a single page.
- * @property boolean $fitcell if true attempt to fit all the text within the cell by reducing the font size (do not work in HTML mode). $maxh must be greater than 0 and wqual to $h.
+ * @property boolean $fitcell if true attempt to fit all the text within the cell by reducing the font size (do not work in HTML mode). $maxh must be greater than 0 and equal to $h.
  *
  * @method MultiCellOp setW(float $w) Width of cells. If 0, they extend up to the right margin of the page.
  * @method MultiCellOp setH(float $h) Cell minimum height. The cell extends automatically if needed.
@@ -49,7 +49,7 @@ namespace org\majkel\tcpdfwarper;
  * @method MultiCellOp setAutopadding(boolean $autopadding) if true, uses internal padding and automatically adjust it to account for line width.
  * @method MultiCellOp setMaxh(float $maxh) maximum height. It should be >= $h and less then remaining space to the bottom of the page, or 0 for disable this feature. This feature works only when $ishtml=false.
  * @method MultiCellOp setValign(string $valign) Vertical alignment of text (requires $maxh = $h > 0). Possible values are:<ul><li>T: TOP</li><li>M: middle</li><li>B: bottom</li></ul>. This feature works only when $ishtml=false and the cell must fit in a single page.
- * @method MultiCellOp setFitcell(boolean $fitcell) if true attempt to fit all the text within the cell by reducing the font size (do not work in HTML mode). $maxh must be greater than 0 and wqual to $h.
+ * @method MultiCellOp setFitcell(boolean $fitcell) if true attempt to fit all the text within the cell by reducing the font size (do not work in HTML mode). $maxh must be greater than 0 and equal to $h.
  *
  * @method float getW() Width of cells. If 0, they extend up to the right margin of the page.
  * @method float getH() Cell minimum height. The cell extends automatically if needed.
@@ -66,7 +66,7 @@ namespace org\majkel\tcpdfwarper;
  * @method boolean getAutopadding() if true, uses internal padding and automatically adjust it to account for line width.
  * @method float getMaxh() maximum height. It should be >= $h and less then remaining space to the bottom of the page, or 0 for disable this feature. This feature works only when $ishtml=false.
  * @method string getValign() Vertical alignment of text (requires $maxh = $h > 0). Possible values are:<ul><li>T: TOP</li><li>M: middle</li><li>B: bottom</li></ul>. This feature works only when $ishtml=false and the cell must fit in a single page.
- * @method boolean getFitcell() if true attempt to fit all the text within the cell by reducing the font size (do not work in HTML mode). $maxh must be greater than 0 and wqual to $h.
+ * @method boolean getFitcell() if true attempt to fit all the text within the cell by reducing the font size (do not work in HTML mode). $maxh must be greater than 0 and equal to $h.
  *
  * @method int write() Return the number of cells or 1 for html mode.
 	 *
