@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3338ba46eed45bbd519895aa3a600066",
+    "hash": "ee264b4977cadb16d7b837d9152c9cd9",
     "packages": [],
     "packages-dev": [
         {
@@ -1097,16 +1097,16 @@
         },
         {
             "name": "tecnick.com/tcpdf",
-            "version": "6.2.8",
+            "version": "6.2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tecnickcom/TCPDF.git",
-                "reference": "3dee9e7f3a414875fd1d9f4f1dfc2433493a86d2"
+                "reference": "fa6ab8a1e1fbabb9e6cfd2f807514fa1497240e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/3dee9e7f3a414875fd1d9f4f1dfc2433493a86d2",
-                "reference": "3dee9e7f3a414875fd1d9f4f1dfc2433493a86d2",
+                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/fa6ab8a1e1fbabb9e6cfd2f807514fa1497240e4",
+                "reference": "fa6ab8a1e1fbabb9e6cfd2f807514fa1497240e4",
                 "shasum": ""
             },
             "require": {
@@ -1156,7 +1156,7 @@
                 "pdf417",
                 "qrcode"
             ],
-            "time": "2015-04-29 16:13:58"
+            "time": "2015-06-18 09:12:38"
         }
     ],
     "aliases": [],
