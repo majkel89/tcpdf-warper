@@ -5,7 +5,7 @@ TCPDF Warper
 
 **Author**: Michał (majkel) Kowalik <maf.michal@gmail.com>
 
-**Version**: 0.2.0
+**Version**: 0.2.2
 
 **Minimum PHP**: 5.4
 
@@ -34,10 +34,10 @@ clearer and more maintainable.
         ->setPos(20, 20)->setSize(64, 64)
         ->setAlt(true)->setAltImgs($altimgs)
         ->render();
-        
+
 No more hassle with remembering which argument is which or hardcodeing long list of
 parameters just to change last one of them.
-        
+
 Following methods are supported
 
   * Cell (buildCell)
@@ -66,5 +66,5 @@ Features
   - Fully unit tested
   - Full code coverage
   - Code completion friendly (including documentation)
-  - Tested against multiple php versions (5.6 - 5.4, hhvm)
+  - Tested against multiple php versions (5.4 - 7.0, hhvm)
   - Tested against multiple TCPDF libraries (see travis)
