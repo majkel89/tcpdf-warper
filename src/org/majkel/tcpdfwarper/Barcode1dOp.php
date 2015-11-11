@@ -3,8 +3,8 @@
  * Created by Generator.
  * Package: org\majkel\tcpdfwarper
  * User: Michał (majkel) Kowalik <maf.michal@gmail.com>
- * Date: 2015-06-21
- * Time: 21:02:59
+ * Date: 2015-11-11
+ * Time: 23:12:43
  */
 
 namespace org\majkel\tcpdfwarper;
@@ -51,9 +51,10 @@ namespace org\majkel\tcpdfwarper;
 class Barcode1dOp extends AbstractOp {
 
 	/**
-	 * @var array
+	 * @return array
 	 */
-	protected static $defaultArguments = array(
+	protected function getDefaultArguments() {
+		return array(
 			'code' => null,
 			'type' => null,
 			'x' => '',
@@ -63,12 +64,15 @@ class Barcode1dOp extends AbstractOp {
 			'xres' => '',
 			'style' => '',
 			'align' => '',
-	);
+		);
+	}
 
 	/**
 	 * @var string
 	 */
-	protected static $method = 'write1DBarcode';
+	protected function getMethod() {
+		return 'write1DBarcode';
+	}
 
 	/**
 	 * @return void

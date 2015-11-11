@@ -26,16 +26,6 @@ abstract class AbstractOp {
 	protected $_arguments = array();
 
 	/**
-	 * @var array
-	 */
-	protected static $defaultArguments = array();
-
-	/**
-	 * @var string
-	 */
-	protected static $method = '';
-
-	/**
 	 * @param \TCPDF $tcpdf
 	 */
 	public function __construct($tcpdf) {
@@ -79,7 +69,7 @@ abstract class AbstractOp {
 	 * @return mixed
 	 */
 	public function put() {
-		return call_user_func_array(array($this->getTcpdf(), static::$method), $this->getArguments());
+		return call_user_func_array(array($this->getTcpdf(), $this->getMethod()), $this->getArguments());
 	}
 
 	/**
@@ -138,7 +128,7 @@ abstract class AbstractOp {
 	 * @return array
 	 */
 	public function getArguments() {
-		return array_merge(static::$defaultArguments, $this->_arguments);
+		return array_merge($this->getDefaultArguments(), $this->_arguments);
 	}
 
 	/**
@@ -169,4 +159,14 @@ abstract class AbstractOp {
 			$this->assertArgExists($argument);
 		}
 	}
+
+	/**
+	 * @return array
+	 */
+	abstract protected function getDefaultArguments();
+
+	/**
+	* @return string
+	*/
+	abstract protected function getMethod();
 }

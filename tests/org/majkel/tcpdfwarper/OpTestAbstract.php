@@ -61,7 +61,7 @@ abstract class OpTestAbstract extends AbstractTestCase {
 
 	protected function constructArguments() {
 		$arguments = $this->getExceptedArguments();
-		foreach ($arguments as $key => $value) {
+		foreach (array_keys($arguments) as $key) {
 			$arguments[$key] = rand(10000, 99999);
 		}
 		return $arguments;
@@ -71,7 +71,7 @@ abstract class OpTestAbstract extends AbstractTestCase {
 	 * @coversNothing
 	 */
 	public function testMethodConfiguration() {
-		$method = $this->reflect($this->getClass())->method;
+		$method = $this->reflect($this->getObject())->getMethod();
 		self::assertSame($this->getMethod(), $method);
 	}
 

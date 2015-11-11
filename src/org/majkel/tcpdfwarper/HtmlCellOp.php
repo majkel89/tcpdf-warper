@@ -3,8 +3,8 @@
  * Created by Generator.
  * Package: org\majkel\tcpdfwarper
  * User: Michał (majkel) Kowalik <maf.michal@gmail.com>
- * Date: 2015-06-21
- * Time: 21:02:59
+ * Date: 2015-11-11
+ * Time: 23:12:43
  */
 
 namespace org\majkel\tcpdfwarper;
@@ -62,9 +62,10 @@ namespace org\majkel\tcpdfwarper;
 class HtmlCellOp extends AbstractOp {
 
 	/**
-	 * @var array
+	 * @return array
 	 */
-	protected static $defaultArguments = array(
+	protected function getDefaultArguments() {
+		return array(
 			'w' => null,
 			'h' => null,
 			'x' => null,
@@ -76,12 +77,15 @@ class HtmlCellOp extends AbstractOp {
 			'reseth' => true,
 			'align' => '',
 			'autopadding' => true,
-	);
+		);
+	}
 
 	/**
 	 * @var string
 	 */
-	protected static $method = 'writeHTMLCell';
+	protected function getMethod() {
+		return 'writeHTMLCell';
+	}
 
 	/**
 	 * @return void

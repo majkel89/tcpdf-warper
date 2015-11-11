@@ -48,18 +48,22 @@ namespace org\majkel\tcpdfwarper;
 class <?= $class->className ?> extends AbstractOp {
 
 	/**
-	 * @var array
+	 * @return array
 	 */
-	protected static $defaultArguments = array(
+	protected function getDefaultArguments() {
+		return array(
 <?php foreach ($class->defaultParameters as $A) : ?>
 			'<?= $A->name ?>' => <?= $A->value ?>,
 <?php endforeach ?>
-	);
+		);
+	}
 
 	/**
 	 * @var string
 	 */
-	protected static $method = '<?= $class->method ?>';
+	protected function getMethod() {
+		return '<?= $class->method ?>';
+	}
 
 	/**
 	 * @return <?= $class->returnType ?> <?= $class->returnDoc ?>

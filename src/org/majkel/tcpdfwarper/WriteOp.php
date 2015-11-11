@@ -3,8 +3,8 @@
  * Created by Generator.
  * Package: org\majkel\tcpdfwarper
  * User: Michał (majkel) Kowalik <maf.michal@gmail.com>
- * Date: 2015-06-21
- * Time: 21:02:59
+ * Date: 2015-11-11
+ * Time: 23:12:43
  */
 
 namespace org\majkel\tcpdfwarper;
@@ -62,9 +62,10 @@ namespace org\majkel\tcpdfwarper;
 class WriteOp extends AbstractOp {
 
 	/**
-	 * @var array
+	 * @return array
 	 */
-	protected static $defaultArguments = array(
+	protected function getDefaultArguments() {
+		return array(
 			'h' => null,
 			'txt' => null,
 			'link' => '',
@@ -77,12 +78,15 @@ class WriteOp extends AbstractOp {
 			'maxh' => 0,
 			'wadj' => 0,
 			'margin' => '',
-	);
+		);
+	}
 
 	/**
 	 * @var string
 	 */
-	protected static $method = 'Write';
+	protected function getMethod() {
+		return 'Write';
+	}
 
 	/**
 	 * @return mixed Return the number of cells or the remaining string if $firstline = true.

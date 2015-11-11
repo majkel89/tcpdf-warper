@@ -3,8 +3,8 @@
  * Created by Generator.
  * Package: org\majkel\tcpdfwarper
  * User: Michał (majkel) Kowalik <maf.michal@gmail.com>
- * Date: 2015-06-21
- * Time: 21:02:59
+ * Date: 2015-11-11
+ * Time: 23:12:43
  */
 
 namespace org\majkel\tcpdfwarper;
@@ -55,9 +55,10 @@ namespace org\majkel\tcpdfwarper;
 class ImageSvgOp extends AbstractOp {
 
 	/**
-	 * @var array
+	 * @return array
 	 */
-	protected static $defaultArguments = array(
+	protected function getDefaultArguments() {
+		return array(
 			'file' => null,
 			'x' => '',
 			'y' => '',
@@ -68,12 +69,15 @@ class ImageSvgOp extends AbstractOp {
 			'palign' => '',
 			'border' => 0,
 			'fitonpage' => false,
-	);
+		);
+	}
 
 	/**
 	 * @var string
 	 */
-	protected static $method = 'ImageSvg';
+	protected function getMethod() {
+		return 'ImageSvg';
+	}
 
 	/**
 	 * @return void

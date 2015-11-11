@@ -21,10 +21,19 @@ class AbstractOpTest extends AbstractTestCase {
 	const CLS = '\org\majkel\tcpdfwarper\AbstractOp';
 
 	/**
+	 * @return \org\majkel\tcpdfwarper\AbstractOp
+	 */
+	private function getObject() {
+		return $this->mock(self::CLS)
+				->getDefaultArguments(array(), array())
+				->getMethod(null);
+	}
+
+	/**
 	 * @covers ::render
 	 */
 	public function testRender() {
-		$obj = $this->mock(self::CLS)
+		$obj = $this->getObject()
 				->put($this->once())
 				->new();
 		$obj->render();
@@ -34,7 +43,7 @@ class AbstractOpTest extends AbstractTestCase {
 	 * @covers ::write
 	 */
 	public function testWrite() {
-		$obj = $this->mock(self::CLS)
+		$obj = $this->getObject()
 				->put($this->once())
 				->new();
 		$obj->write();
@@ -48,11 +57,10 @@ class AbstractOpTest extends AbstractTestCase {
 		$pdf->expects($this->once())
 				->method('AddSpotColor')
 				->with(1, 2, 3, 4, 5);
-
-		$this->reflect(self::CLS)->method = 'AddSpotColor';
-		$obj = $this->mock(self::CLS)
+		$obj = $this->getObject()
 				->getTcpdf($pdf)
 				->getArguments([], [1, 2, 3, 4, 5])
+				->getMethod('AddSpotColor')
 				->new();
 		$obj->put();
 	}
@@ -62,7 +70,7 @@ class AbstractOpTest extends AbstractTestCase {
 	 */
 	public function testConstruct() {
 		$pdf = new \stdClass;
-		$obj = $this->mock(self::CLS)->new($pdf);
+		$obj = $this->getObject()->new($pdf);
 		self::assertSame($pdf, $obj->getTcpdf());
 	}
 
@@ -71,7 +79,7 @@ class AbstractOpTest extends AbstractTestCase {
 	 * @covers ::getTcpdf
 	 */
 	public function testSettersTcpdf() {
-		$obj = $this->mock(self::CLS)->new();
+		$obj = $this->getObject()->new();
 
 		$obj->setTcpdf(33);
 		self::assertNull($obj->getTcpdf());
@@ -88,7 +96,7 @@ class AbstractOpTest extends AbstractTestCase {
 	 * @covers ::assertArgExists
 	 */
 	public function testAssertArgExists() {
-		$obj = $this->mock(self::CLS)->new();
+		$obj = $this->getObject()->new();
 		$obj->setProperty(1);
 		$this->reflect($obj)->assertArgExists('property');
 		$this->success();
@@ -100,7 +108,7 @@ class AbstractOpTest extends AbstractTestCase {
 	 * @covers ::assertArgExists
 	 */
 	public function testAssertArgExistsException() {
-		$obj = $this->mock(self::CLS)->new();
+		$obj = $this->getObject()->new();
 		$this->reflect($obj)->assertArgExists('property');
 	}
 
@@ -108,7 +116,7 @@ class AbstractOpTest extends AbstractTestCase {
 	 * @covers ::assertArgsExist
 	 */
 	public function testAssertArgsExist() {
-		$obj = $this->mock(self::CLS)->new();
+		$obj = $this->getObject()->new();
 		$obj->property = true;
 		$this->reflect($obj)->assertArgsExist(array('property'));
 		$this->success();
@@ -120,7 +128,7 @@ class AbstractOpTest extends AbstractTestCase {
 	 * @covers ::assertArgsExist
 	 */
 	public function testAssertArgsExistException() {
-		$obj = $this->mock(self::CLS)->new();
+		$obj = $this->getObject()->new();
 		$this->reflect($obj)->assertArgsExist(array('property'));
 	}
 
@@ -128,7 +136,7 @@ class AbstractOpTest extends AbstractTestCase {
 	 * @covers ::setArguments
 	 */
 	public function testSetArguments() {
-		$obj = $this->mock(self::CLS)->new();
+		$obj = $this->getObject()->new();
 		$obj->setArguments(array(
 			'property' => 1
 		));
@@ -139,16 +147,18 @@ class AbstractOpTest extends AbstractTestCase {
 	 * @covers ::getArguments
 	 */
 	public function testGetArguments() {
-		$obj = $this->mock(self::CLS)->new();
-		$this->reflect(self::CLS)->defaultArguments = array(
-				'a' => 1,
-				'b' => 1,
-				'c' => 1,
-		);
+		$obj = $this->mock(self::CLS)
+				->getMethod()
+				->getDefaultArguments(array(), array(
+					'a' => 1,
+					'b' => 1,
+					'c' => 1,
+				))
+				->new();
 		$obj->d = 2;
 		$obj->c = 2;
 		$obj->b = 2;
-		$actualArgs = $this->reflect($obj)->getArguments();
+		$actualArgs = $obj->getArguments();
 		self::assertSame(array(
 				'a' => 1,
 				'b' => 2,
@@ -165,7 +175,7 @@ class AbstractOpTest extends AbstractTestCase {
 	 * @covers ::__unset
 	 */
 	public function testMagicArguments() {
-		$obj = $this->mock(self::CLS)->new();
+		$obj = $this->getObject()->new();
 
 		self::assertFalse(isset($obj->property));
 
@@ -180,7 +190,7 @@ class AbstractOpTest extends AbstractTestCase {
 	}
 
 	public function testMagicArgumentsSetters() {
-		$obj = $this->mock(self::CLS)->new();
+		$obj = $this->getObject()->new();
 
 		self::assertNull($obj->getProperty());
 
@@ -194,7 +204,7 @@ class AbstractOpTest extends AbstractTestCase {
 	}
 
 	public function testSetPropCamelCase() {
-		$obj = $this->mock(self::CLS)->new();
+		$obj = $this->getObject()->new();
 
 		$obj->propCamelCase = 1;
 
@@ -202,7 +212,7 @@ class AbstractOpTest extends AbstractTestCase {
 	}
 
 	public function testSetMethodCamelCase() {
-		$obj = $this->mock(self::CLS)->new();
+		$obj = $this->getObject()->new();
 
 		$obj->setPropCamelCase(1);
 
@@ -214,7 +224,7 @@ class AbstractOpTest extends AbstractTestCase {
 	 * @expectedExceptionMessage Call to undefined method `doesNotExists`
 	 */
 	public function testMagicArgumentsSettersException() {
-		$obj = $this->mock(self::CLS)->new();
+		$obj = $this->getObject()->new();
 		$obj->doesNotExists();
 	}
 }
