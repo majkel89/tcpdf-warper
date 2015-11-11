@@ -2,3 +2,4 @@ vendor
 .idea
 atlassian-ide-plugin.xml
 todo.txt
+*.pdf

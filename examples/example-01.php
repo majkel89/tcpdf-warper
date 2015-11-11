@@ -9,7 +9,9 @@
 
 namespace org\majkel;
 
-require_once '../vendor/autoload.php';
+chdir(__DIR__);
+
+require_once  '../vendor/autoload.php';
 
 class PDF extends \TCPDF {
 	use tcpdfwarper\TCPDFWarperTrait;
