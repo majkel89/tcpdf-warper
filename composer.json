@@ -15,7 +15,7 @@
     },
     "require-dev": {
         "tecnick.com/tcpdf": "*",
-        "phpunit/phpunit": "*",
+        "phpunit/phpunit": "4.7.*",
         "ptrofimov/xpmock": "*",
         "onigoetz/fpdi_tcpdf": "*",
         "squizlabs/php_codesniffer": "*"
