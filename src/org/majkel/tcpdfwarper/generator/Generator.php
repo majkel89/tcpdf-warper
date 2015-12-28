@@ -51,7 +51,7 @@ class Generator {
 			if (!file_exists($this->configFile)) {
 				throw new GeneratorException("Config file `{$this->configFile}` does not exists.");
 			}
-			include $this->configFile;
+			$config = require $this->configFile;
 			if (!isset($config) || !is_array($config)) {
 				throw new GeneratorException("Invalid configuration file `{$this->configFile}`");
 			}
@@ -86,7 +86,7 @@ class Generator {
 	 */
 	protected function generateClass($class) {
 		ob_start();
-		include $this->classTemplateFile;
+		require $this->classTemplateFile;
 		$result = ob_get_contents();
 		ob_end_clean();
 		return self::removeTrailingSpaces($result);
@@ -98,7 +98,7 @@ class Generator {
 	 */
 	protected function generateTrait($classes) {
 		ob_start();
-		include $this->traitTemplateFile;
+		require $this->traitTemplateFile;
 		$result = ob_get_contents();
 		ob_end_clean();
 		return self::removeTrailingSpaces($result);

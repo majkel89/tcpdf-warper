@@ -81,7 +81,7 @@ $_barcode2dCodeDoc = <<<EOF
 </ul>
 EOF;
 
-$config = array(
+return array(
 		'Cell' => array(
 				'metaMethods' => array($_wh, $_size),
 		),

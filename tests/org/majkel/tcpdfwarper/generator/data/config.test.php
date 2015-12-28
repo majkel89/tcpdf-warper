@@ -6,7 +6,7 @@
  * Time: 23:22
  */
 
-$config = array(
+return array(
 		'a',
 		'b' => array(
 		),
