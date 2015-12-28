@@ -30,7 +30,7 @@ class AbstractTestCase extends \PHPUnit_Framework_TestCase {
 	const ENV_PACKAGE = 'TCPDF_PACKAGE';
 
 	protected static $packageMapping = array(
-			'tecnick.com/tcpdf' => self::DEFAULT_TCPDF,
+			'tecnickcom/tcpdf' => self::DEFAULT_TCPDF,
 			'onigoetz/fpdi_tcpdf' => '\fpdi\FPDI',
 			'dummy' => '\org\majkel\tcpdfwarper\DummyTcpdf',
 	);
