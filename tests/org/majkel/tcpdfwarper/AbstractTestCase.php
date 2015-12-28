@@ -11,15 +11,6 @@ namespace org\majkel\tcpdfwarper;
 
 use Xpmock\TestCaseTrait;
 
-//function getenv($name) {
-//	if ($name == AbstractTestCase::ENV_PACKAGE) {
-//		return 'onigoetz/fpdi_tcpdf';
-//	}
-//	return \getenv($name);
-//}
-
-// require_once 'DummyTcpdf.php';
-
 /**
  * Class AbstractTestCase
  * @package org\majkel\tcpdfwarper
