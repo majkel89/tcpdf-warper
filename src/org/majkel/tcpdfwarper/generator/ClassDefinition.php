@@ -201,7 +201,7 @@ class ClassDefinition {
 	 * @param ConfigItem $config
 	 * @return ClassDefinition
 	 */
-	public static function fromConfigItem($config) {
+	public static function fromConfigItem(ConfigItem $config) {
 		$class = static::newSelf();
 		$class->name = $config->name;
 		$class->className = $config->className;
