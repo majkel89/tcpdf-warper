@@ -2,10 +2,11 @@ TCPDF Warper
 ============
 
 [![Build Status](https://travis-ci.org/majkel89/tcpdf-warper.svg?branch=master)](https://travis-ci.org/majkel89/tcpdf-warper)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/151eec45-478b-41e4-aa58-0c2d86d4f36a/mini.png)](https://insight.sensiolabs.com/projects/151eec45-478b-41e4-aa58-0c2d86d4f36a)
 
 **Author**: Michał (majkel) Kowalik <maf.michal@gmail.com>
 
-**Version**: 0.2.2
+**Version**: 0.2.3
 
 **Minimum PHP**: 5.4
 
