@@ -59,7 +59,7 @@ class <?= $class->className ?> extends AbstractOp {
 	}
 
 	/**
-	 * @var string
+	 * @return string
 	 */
 	protected function getMethod() {
 		return '<?= $class->method ?>';

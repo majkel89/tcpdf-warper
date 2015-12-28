@@ -3,8 +3,8 @@
  * Created by Generator.
  * Package: org\majkel\tcpdfwarper
  * User: Michał (majkel) Kowalik <maf.michal@gmail.com>
- * Date: 2015-11-11
- * Time: 23:12:43
+ * Date: 2015-12-28
+ * Time: 22:28:03
  */
 
 namespace org\majkel\tcpdfwarper;
@@ -59,7 +59,7 @@ class HtmlOp extends AbstractOp {
 	}
 
 	/**
-	 * @var string
+	 * @return string
 	 */
 	protected function getMethod() {
 		return 'writeHTML';
