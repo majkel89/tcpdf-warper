@@ -1,7 +1,7 @@
 {
     "name": "majkel.org/tcpdf-warper",
     "description": "Create PDF documents using TCPDF fluent interface",
-    "license": "Freeware",
+    "license": "MIT",
     "type": "library",
     "keywords": ["tcpdf","warper","pdf"],
     "authors": [
