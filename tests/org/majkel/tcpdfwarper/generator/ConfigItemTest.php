@@ -47,7 +47,7 @@ class ConfigItemTest extends \PHPUnit_Framework_TestCase {
 	 * @expectedException \org\majkel\tcpdfwarper\generator\GeneratorException
 	 */
 	public function testFromArrayException() {
-		$obj = ConfigItem::fromArray(array());
+		ConfigItem::fromArray(array());
 	}
 
 }
