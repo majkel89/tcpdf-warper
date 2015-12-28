@@ -14,11 +14,11 @@
         "php": ">=5.4.0"
     },
     "require-dev": {
-        "tecnick.com/tcpdf": "*",
+        "tecnickcom/tcpdf": "*",
         "phpunit/phpunit": "4.7.*",
         "ptrofimov/xpmock": "*",
-        "onigoetz/fpdi_tcpdf": "*",
-        "squizlabs/php_codesniffer": "*"
+        "squizlabs/php_codesniffer": "*",
+        "symfony/yaml": "2.*"
     },
     "autoload": {
         "psr-0": {

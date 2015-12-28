@@ -12,8 +12,8 @@ matrix:
         - php: nightly
 
 env:
-    - TCPDF_PACKAGE="tecnick.com/tcpdf"   TCPDF_VERSION="*"
-    - TCPDF_PACKAGE="tecnick.com/tcpdf"   TCPDF_VERSION="6.1.x"
+    - TCPDF_PACKAGE="tecnickcom/tcpdf"   TCPDF_VERSION="*"
+    - TCPDF_PACKAGE="tecnickcom/tcpdf"   TCPDF_VERSION="6.1.x"
     - TCPDF_PACKAGE="onigoetz/fpdi_tcpdf" TCPDF_VERSION="*"
 
 install:
