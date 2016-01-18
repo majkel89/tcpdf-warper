@@ -3,6 +3,10 @@ TCPDF Warper
 
 [![Build Status](https://travis-ci.org/majkel89/tcpdf-warper.svg?branch=master)](https://travis-ci.org/majkel89/tcpdf-warper)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/151eec45-478b-41e4-aa58-0c2d86d4f36a/mini.png)](https://insight.sensiolabs.com/projects/151eec45-478b-41e4-aa58-0c2d86d4f36a)
+[![Latest Stable Version](https://poser.pugx.org/majkel.org/tcpdf-warper/v/stable)](https://packagist.org/packages/majkel.org/tcpdf-warper)
+[![Total Downloads](https://poser.pugx.org/majkel.org/tcpdf-warper/downloads)](https://packagist.org/packages/majkel.org/tcpdf-warper)
+[![Latest Unstable Version](https://poser.pugx.org/majkel.org/tcpdf-warper/v/unstable)](https://packagist.org/packages/majkel.org/tcpdf-warper)
+[![License](https://poser.pugx.org/majkel.org/tcpdf-warper/license)](https://packagist.org/packages/majkel.org/tcpdf-warper)
 
 **Author**: Michał (majkel) Kowalik <maf.michal@gmail.com>
 
@@ -94,3 +98,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/majkel89/tcpdf-warper/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
