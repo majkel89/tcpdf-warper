@@ -6,14 +6,8 @@ TCPDF Warper
 [![Latest Stable Version](https://poser.pugx.org/majkel.org/tcpdf-warper/v/stable)](https://packagist.org/packages/majkel.org/tcpdf-warper)
 [![Total Downloads](https://poser.pugx.org/majkel.org/tcpdf-warper/downloads)](https://packagist.org/packages/majkel.org/tcpdf-warper)
 [![Latest Unstable Version](https://poser.pugx.org/majkel.org/tcpdf-warper/v/unstable)](https://packagist.org/packages/majkel.org/tcpdf-warper)
-![PHP Version](https://img.shields.io/badge/version-PHP%205.3%2B-lightgrey.svg)
+![PHP Version](https://img.shields.io/badge/version-PHP%205.4%2B-lightgrey.svg)
 [![License](https://poser.pugx.org/majkel.org/tcpdf-warper/license)](https://packagist.org/packages/majkel.org/tcpdf-warper)
-
-**Author**: Michał (majkel) Kowalik <maf.michal@gmail.com>
-
-**Version**: 0.2.3
-
-**Minimum PHP**: 5.4
 
 Installation
 ------------
