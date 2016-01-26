@@ -51,13 +51,13 @@ class ClassDefinition {
 	 * @return string
 	 */
 	protected static function extractFromOffsetToTag($comment, $offset = 0) {
-		if (preg_match('#\s+@[a-zA-Z]+\s+#', $comment, $m, PREG_OFFSET_CAPTURE, $offset)) {
-			$x = $m[0][1];
+		if (preg_match('#\s+@[a-zA-Z]+\s+#', $comment, $matches, PREG_OFFSET_CAPTURE, $offset)) {
+			$position = $matches[0][1];
 		}
 		else {
-			$x = strlen($comment);
+			$position = strlen($comment);
 		}
-		return rtrim(substr($comment, $offset, $x - $offset));
+		return rtrim(substr($comment, $offset, $position - $offset));
 	}
 
 	/**
@@ -82,13 +82,13 @@ class ClassDefinition {
 	 * @throws GeneratorException
 	 */
 	protected function setupReturn($comment) {
-		if (!preg_match('#\*\s+@return\s+(\w+)\s+#', $comment, $m, PREG_OFFSET_CAPTURE)) {
+		if (!preg_match('#\*\s+@return\s+(\w+)\s+#', $comment, $matches, PREG_OFFSET_CAPTURE)) {
 			$this->returnDoc = '';
 			$this->returnType = 'void';
 		}
 		else {
-			$this->returnDoc = self::extractFromOffsetToTag($comment, $m[0][1] + strlen($m[0][0]));
-			$this->returnType = $m[1][0] ? $m[1][0] : 'mixed';
+			$this->returnDoc = self::extractFromOffsetToTag($comment, $matches[0][1] + strlen($matches[0][0]));
+			$this->returnType = $matches[1][0] ? $matches[1][0] : 'mixed';
 		}
 	}
 
@@ -100,12 +100,12 @@ class ClassDefinition {
 	 */
 	protected static function findParam($comment, $parameter) {
 		if (!preg_match('#\*\s+@param\s+(([a-zA-Z]+)\s+)?\$'
-				.$parameter.'\s+\(([a-zA-Z]+)\)\s+#', $comment, $m, PREG_OFFSET_CAPTURE))
+				.$parameter.'\s+\(([a-zA-Z]+)\)\s+#', $comment, $matches, PREG_OFFSET_CAPTURE))
 		{
 			throw new GeneratorException("Failed to math property regex");
 		}
-		$type = $m[2][0] ? $m[2][0] : $m[3][0];
-		$offset = $m[0][1] + strlen($m[0][0]);
+		$type = $matches[2][0] ? $matches[2][0] : $matches[3][0];
+		$offset = $matches[0][1] + strlen($matches[0][0]);
 		return array($type, $offset);
 	}
 

@@ -18,6 +18,8 @@ engines:
             - 56dd0d30c0f234c3c1fd071b99ee4afa
             - ee987aacb2fc79aae394abd73ee600a2
             - fd0c0e02d0df0abb02e664c3303ae25a
+            - 6eb7388cc0e6f0db2b9f03191c05e9ff
+            - 4b9cb516195b083f0e61da2cab0619e0
 ratings:
     paths:
         - "src/**/*.php"
