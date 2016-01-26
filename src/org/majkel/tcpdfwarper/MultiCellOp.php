@@ -3,8 +3,8 @@
  * Created by Generator.
  * Package: org\majkel\tcpdfwarper
  * User: Michał (majkel) Kowalik <maf.michal@gmail.com>
- * Date: 2015-12-28
- * Time: 22:28:03
+ * Date: 2016-01-26
+ * Time: 23:13:35
  */
 
 namespace org\majkel\tcpdfwarper;
@@ -76,6 +76,7 @@ namespace org\majkel\tcpdfwarper;
 class MultiCellOp extends AbstractOp {
 
 	/**
+	 * @codeCoverageIgnore
 	 * @return array
 	 */
 	protected function getDefaultArguments() {
@@ -100,6 +101,7 @@ class MultiCellOp extends AbstractOp {
 	}
 
 	/**
+	 * @codeCoverageIgnore
 	 * @return string
 	 */
 	protected function getMethod() {

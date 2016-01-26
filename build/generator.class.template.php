@@ -48,6 +48,7 @@ namespace org\majkel\tcpdfwarper;
 class <?= $class->className ?> extends AbstractOp {
 
 	/**
+	 * @codeCoverageIgnore
 	 * @return array
 	 */
 	protected function getDefaultArguments() {
@@ -59,6 +60,7 @@ class <?= $class->className ?> extends AbstractOp {
 	}
 
 	/**
+	 * @codeCoverageIgnore
 	 * @return string
 	 */
 	protected function getMethod() {
