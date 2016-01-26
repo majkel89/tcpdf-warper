@@ -21,3 +21,7 @@ engines:
 ratings:
     paths:
         - "src/**/*.php"
+exclude_paths:
+    - tests/**/*
+    - build/**/*
+    - vendor/**/*
