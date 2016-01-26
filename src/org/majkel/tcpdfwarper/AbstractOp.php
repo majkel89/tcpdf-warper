@@ -116,12 +116,10 @@ abstract class AbstractOp {
 			$this->$suffix = count($arguments) > 0 ? $arguments[0] : null;
 			return $this;
 		}
-		else if ($prefix === 'get') {
+		if ($prefix === 'get') {
 			return $this->$suffix;
 		}
-		else {
-			throw new MissingMethodException($name, $arguments);
-		}
+		throw new MissingMethodException($name, $arguments);
 	}
 
 	/**

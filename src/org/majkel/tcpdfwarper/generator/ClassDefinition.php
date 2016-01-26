@@ -51,12 +51,8 @@ class ClassDefinition {
 	 * @return string
 	 */
 	protected static function extractFromOffsetToTag($comment, $offset = 0) {
-		if (preg_match('#\s+@[a-zA-Z]+\s+#', $comment, $matches, PREG_OFFSET_CAPTURE, $offset)) {
-			$position = $matches[0][1];
-		}
-		else {
-			$position = strlen($comment);
-		}
+		$position = preg_match('#\s+@[a-zA-Z]+\s+#', $comment, $matches, PREG_OFFSET_CAPTURE, $offset)
+			? $matches[0][1] : strlen($comment);
 		return rtrim(substr($comment, $offset, $position - $offset));
 	}
 
@@ -85,11 +81,10 @@ class ClassDefinition {
 		if (!preg_match('#\*\s+@return\s+(\w+)\s+#', $comment, $matches, PREG_OFFSET_CAPTURE)) {
 			$this->returnDoc = '';
 			$this->returnType = 'void';
+			return;
 		}
-		else {
-			$this->returnDoc = self::extractFromOffsetToTag($comment, $matches[0][1] + strlen($matches[0][0]));
-			$this->returnType = $matches[1][0] ? $matches[1][0] : 'mixed';
-		}
+		$this->returnDoc = self::extractFromOffsetToTag($comment, $matches[0][1] + strlen($matches[0][0]));
+		$this->returnType = $matches[1][0] ? $matches[1][0] : 'mixed';
 	}
 
 	/**
