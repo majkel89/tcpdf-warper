@@ -8,6 +8,8 @@
 
 namespace org\majkel\tcpdfwarper\generator;
 
+use org\majkel\tcpdfwarper\Utils;
+
 /**
  * Class ConfigMetaMethod
  * @package org\majkel\tcpdfwarper\generator
@@ -28,7 +30,7 @@ class ConfigMetaMethod {
 	public static function fromArray($metaMethod) {
 		$obj = new self();
 		$obj->name = $metaMethod['name'];
-		$obj->args = isset($metaMethod['args']) && is_array($metaMethod['args']) ? $metaMethod['args'] : array();
+		$obj->args = Utils::getKeyAsArray($metaMethod, 'args');
 		$obj->doc = isset($metaMethod['doc']) ? $metaMethod['doc'] : '';
 		return $obj;
 	}

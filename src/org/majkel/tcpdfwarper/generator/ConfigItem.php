@@ -8,6 +8,8 @@
 
 namespace org\majkel\tcpdfwarper\generator;
 
+use org\majkel\tcpdfwarper\Utils;
+
 /**
  * Class ConfigItem
  * @package org\majkel\tcpdfwarper\generator
@@ -38,8 +40,7 @@ class ConfigItem {
 		$obj->method = $array['method'];
 		$obj->name = isset($array['className']) ? $array['className'] : $array['method'];
 		$obj->className = $obj->name.'Op';
-		$obj->additionalDoc = isset($array['additionalDoc']) && is_array($array['additionalDoc'])
-				? $array['additionalDoc'] : array();
+		$obj->additionalDoc = Utils::getKeyAsArray($array, 'additionalDoc');
 		$obj->metaMethods = array();
 		if (isset($array['metaMethods']) && is_array($array['metaMethods'])) {
 			foreach ($array['metaMethods'] as $metaMethod) {
