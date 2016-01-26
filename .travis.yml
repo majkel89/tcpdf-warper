@@ -30,7 +30,7 @@ script:
     - ./vendor/bin/phpunit --configuration ./build/travis.phpunit.xml
 
 after_script:
-    - /vendor/bin/test-reporter --coverage-report=tests/report/clover.xml
+    - ./vendor/bin/test-reporter --coverage-report=tests/report/clover.xml
 
 addons:
     code_climate:
