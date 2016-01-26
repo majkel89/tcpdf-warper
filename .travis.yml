@@ -26,4 +26,11 @@ install:
     - composer require ${TCPDF_PACKAGE}:${TCPDF_VERSION}
     - composer show -i
 
-script: ./vendor/bin/phpunit --configuration ./build/travis.phpunit.xml
+script:
+    - ./vendor/bin/phpunit --configuration ./build/travis.phpunit.xml
+    - CODECLIMATE_REPO_TOKEN=913ac39b3783061de84315a48dcd0dfdc9bb8cc0f95c342df840608734336ea7
+    - ./vendor/bin/test-reporter --coverage-report=tests/report/clover.xml
+
+addons:
+    code_climate:
+        repo_token: 913ac39b3783061de84315a48dcd0dfdc9bb8cc0f95c342df840608734336ea7
