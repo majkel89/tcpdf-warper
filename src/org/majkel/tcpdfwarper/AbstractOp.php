@@ -18,25 +18,25 @@ abstract class AbstractOp {
 	/**
 	 * @var \TCPDF
 	 */
-	protected $_tcpdf;
+	protected $opTcpdf;
 
 	/**
 	 * @var array
 	 */
-	protected $_arguments = array();
+	protected $opArguments = array();
 
 	/**
 	 * @param \TCPDF $tcpdf
 	 */
 	public function __construct($tcpdf) {
-		$this->_tcpdf = $tcpdf;
+		$this->opTcpdf = $tcpdf;
 	}
 
 	/**
 	 * @return \TCPDF
 	 */
 	public function getTcpdf() {
-		return $this->_tcpdf;
+		return $this->opTcpdf;
 	}
 
 	/**
@@ -44,7 +44,7 @@ abstract class AbstractOp {
 	 * @return void
 	 */
 	public function setTcpdf($tcpdf) {
-		$this->_tcpdf = is_object($tcpdf) ? $tcpdf : $this->_tcpdf;
+		$this->opTcpdf = is_object($tcpdf) ? $tcpdf : $this->opTcpdf;
 	}
 
 	/**
@@ -77,14 +77,14 @@ abstract class AbstractOp {
 	 * @param mixed $value
 	 */
 	public function __set($name, $value) {
-		$this->_arguments[$name] = $value;
+		$this->opArguments[$name] = $value;
 	}
 
 	/**
 	 * @param string $name
 	 */
 	public function __unset($name) {
-		unset($this->_arguments[$name]);
+		unset($this->opArguments[$name]);
 	}
 
 	/**
@@ -92,7 +92,7 @@ abstract class AbstractOp {
 	 * @return bool
 	 */
 	public function __isset($name) {
-		return isset($this->_arguments[$name]);
+		return isset($this->opArguments[$name]);
 	}
 
 	/**
@@ -100,7 +100,7 @@ abstract class AbstractOp {
 	 * @return mixed
 	 */
 	public function __get($name) {
-		return isset($this->_arguments[$name]) ? $this->_arguments[$name] : null;
+		return isset($this->opArguments[$name]) ? $this->opArguments[$name] : null;
 	}
 
 	/**
@@ -126,7 +126,7 @@ abstract class AbstractOp {
 	 * @return array
 	 */
 	public function getArguments() {
-		return array_merge($this->getDefaultArguments(), $this->_arguments);
+		return array_merge($this->getDefaultArguments(), $this->opArguments);
 	}
 
 	/**
@@ -134,7 +134,7 @@ abstract class AbstractOp {
 	 * @return $this
 	 */
 	public function setArguments(array $arguments) {
-		$this->_arguments = $arguments;
+		$this->opArguments = $arguments;
 		return $this;
 	}
 
@@ -143,7 +143,7 @@ abstract class AbstractOp {
 	 * @throws \org\majkel\tcpdfwarper\MissingArgException
 	 */
 	protected function assertArgExists($argName) {
-		if (!isset($this->_arguments[$argName])) {
+		if (!isset($this->opArguments[$argName])) {
 			throw new MissingArgException($argName);
 		}
 	}
