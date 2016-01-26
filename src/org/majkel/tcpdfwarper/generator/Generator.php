@@ -81,15 +81,27 @@ class Generator {
 	}
 
 	/**
+	 * @param string $tpl
+	 * @param array $variables
+	 * @return string
+	 */
+	protected function render($tpl, array $variables) {
+		ob_start();
+		extract($variables, EXTR_SKIP);
+		require $tpl;
+		$result = ob_get_contents();
+		ob_end_clean();
+		return self::removeTrailingSpaces($result);
+	}
+
+	/**
 	 * @param ClassDefinition $class
 	 * @return string
 	 */
 	protected function generateClass($class) {
-		ob_start();
-		require $this->classTemplateFile;
-		$result = ob_get_contents();
-		ob_end_clean();
-		return self::removeTrailingSpaces($result);
+		return $this->render($this->classTemplateFile, [
+			'class' => $class,
+		]);
 	}
 
 	/**
@@ -97,11 +109,9 @@ class Generator {
 	 * @return string
 	 */
 	protected function generateTrait($classes) {
-		ob_start();
-		require $this->traitTemplateFile;
-		$result = ob_get_contents();
-		ob_end_clean();
-		return self::removeTrailingSpaces($result);
+		return $this->render($this->traitTemplateFile, [
+			'classes' => $classes,
+		]);
 	}
 
 	/**

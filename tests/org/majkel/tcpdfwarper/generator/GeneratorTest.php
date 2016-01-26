@@ -101,6 +101,7 @@ class GeneratorTest extends AbstractTestCase {
 
 	/**
 	 * @covers ::generateClass
+	 * @covers ::render
 	 */
 	public function testGenerateClass() {
 		$obj = new Generator(array(
@@ -117,6 +118,7 @@ class GeneratorTest extends AbstractTestCase {
 
 	/**
 	 * @covers ::generateTrait
+	 * @covers ::render
 	 */
 	public function testGenerateTrait() {
 		$obj = new Generator(array(
