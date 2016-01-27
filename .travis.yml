@@ -13,8 +13,8 @@ matrix:
         - php: nightly
 
 env:
-    - TCPDF_PACKAGE="tecnickcom/tcpdf"   TCPDF_VERSION="*"
-    - TCPDF_PACKAGE="tecnickcom/tcpdf"   TCPDF_VERSION="6.1.x"
+    - TCPDF_PACKAGE="tecnickcom/tcpdf"    TCPDF_VERSION="*"
+    - TCPDF_PACKAGE="tecnickcom/tcpdf"    TCPDF_VERSION="6.1.x"
     - TCPDF_PACKAGE="onigoetz/fpdi_tcpdf" TCPDF_VERSION="*"
 
 install:
@@ -30,7 +30,7 @@ script:
     - ./vendor/bin/phpunit --configuration ./build/travis.phpunit.xml
 
 after_script:
-    - ./vendor/bin/test-reporter --coverage-report=tests/report/clover.xml
+    - if [ $TRAVIS_JOB_ID == "1" ]; then ./vendor/bin/test-reporter --coverage-report=./tests/report/clover.xml; fi
 
 addons:
     code_climate:
