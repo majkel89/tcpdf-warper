@@ -30,7 +30,8 @@ script:
     - ./vendor/bin/phpunit --configuration ./build/travis.phpunit.xml
 
 after_script:
-    - if [ $TRAVIS_JOB_ID == "1" ]; then ./vendor/bin/test-reporter --coverage-report=./tests/report/clover.xml; fi
+    - echo "TRAVIS_JOB_ID = $TRAVIS_JOB_ID"
+    - if [ $TRAVIS_JOB_ID == "1" ]; then ./vendor/bin/test-reporter --coverage-report=./tests/report/clover.xml; else echo "Build was not elected to send code coverage report to Code Climate"; fi
 
 addons:
     code_climate:
